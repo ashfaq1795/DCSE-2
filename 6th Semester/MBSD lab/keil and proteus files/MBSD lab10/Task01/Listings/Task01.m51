@@ -1,0 +1,226 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    08/02/2022  16:50:50  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\Task01.obj TO .\Objects\Task01 PRINT (.\Listings\Task01.m51
+>> )
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\Task01.obj (TASK01)
+
+
+LINK MAP OF MODULE:  .\Objects\Task01 (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0041H     UNIT         ?PR?NAME?TASK01
+            CODE    0841H     001AH     UNIT         ?PR?_DELAY?TASK01
+            CODE    085BH     0016H     UNIT         ?PR?MICROCONTROLLER_INIT?TASK01
+            CODE    0871H     0015H     UNIT         ?PR?LCD_INIT?TASK01
+            CODE    0886H     000FH     UNIT         ?PR?_WRITEDATA?TASK01
+            CODE    0895H     000CH     UNIT         ?C_C51STARTUP
+            CODE    08A1H     000BH     UNIT         ?PR?MAIN?TASK01
+            CODE    08ACH     000AH     UNIT         ?PR?_WRITECMD?TASK01
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Task01 (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?TASK01
+
+?PR?MAIN?TASK01
+  +--> ?PR?MICROCONTROLLER_INIT?TASK01
+  +--> ?PR?LCD_INIT?TASK01
+  +--> ?PR?NAME?TASK01
+
+?PR?MICROCONTROLLER_INIT?TASK01
+  +--> ?PR?_DELAY?TASK01
+
+?PR?LCD_INIT?TASK01
+  +--> ?PR?_WRITECMD?TASK01
+
+?PR?_WRITECMD?TASK01
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/02/2022  16:50:50  PAGE 2
+
+
+  +--> ?PR?_DELAY?TASK01
+
+?PR?NAME?TASK01
+  +--> ?PR?_WRITEDATA?TASK01
+
+?PR?_WRITEDATA?TASK01
+  +--> ?PR?_DELAY?TASK01
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Task01 (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0895H         SEGMENT       ?C_C51STARTUP
+  I:0008H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0898H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0895H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0895H         LINE#         133
+  C:0897H         LINE#         134
+  C:0898H         LINE#         135
+  C:0899H         LINE#         136
+  C:089BH         LINE#         185
+  C:089EH         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        TASK01
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:085BH         PUBLIC        microcontroller_init
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0849H         PUBLIC        _delay
+  C:0800H         PUBLIC        name
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/02/2022  16:50:50  PAGE 3
+
+
+  B:00B0H.7       PUBLIC        RS
+  C:08A1H         PUBLIC        main
+  B:00B0H.6       PUBLIC        E
+  C:0871H         PUBLIC        lcd_init
+  C:088BH         PUBLIC        _writedata
+  C:08ACH         PUBLIC        _writecmd
+  -------         PROC          L?0016
+  -------         ENDPROC       L?0016
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        x
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0849H         LINE#         7
+  C:0849H         LINE#         8
+  C:0849H         LINE#         10
+  C:085AH         LINE#         11
+  -------         ENDPROC       _DELAY
+  C:0886H         SYMBOL        L?0015
+  -------         PROC          L?0014
+  -------         ENDPROC       L?0014
+  C:0886H         SYMBOL        L?0015
+  -------         PROC          _WRITEDATA
+  D:0007H         SYMBOL        u
+  C:088BH         LINE#         13
+  C:088BH         LINE#         14
+  C:088BH         LINE#         15
+  C:088DH         LINE#         16
+  C:088DH         LINE#         18
+  C:088DH         LINE#         19
+  C:0890H         LINE#         20
+  C:0892H         LINE#         21
+  -------         ENDPROC       _WRITEDATA
+  -------         PROC          _WRITECMD
+  D:0006H         SYMBOL        z
+  C:08ACH         LINE#         23
+  C:08ACH         LINE#         24
+  C:08ACH         LINE#         25
+  C:08AEH         LINE#         26
+  C:08AEH         LINE#         28
+  C:08AEH         LINE#         29
+  C:08B1H         LINE#         30
+  C:08B3H         LINE#         31
+  -------         ENDPROC       _WRITECMD
+  -------         PROC          LCD_INIT
+  C:0871H         LINE#         34
+  C:0871H         LINE#         35
+  C:0871H         LINE#         36
+  C:0878H         LINE#         37
+  C:087FH         LINE#         38
+  -------         ENDPROC       LCD_INIT
+  -------         PROC          NAME
+  C:0800H         LINE#         40
+  C:0800H         LINE#         41
+  C:0800H         LINE#         42
+  C:0805H         LINE#         43
+  C:080AH         LINE#         44
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/02/2022  16:50:50  PAGE 4
+
+
+  C:080FH         LINE#         45
+  C:0811H         LINE#         46
+  C:0814H         LINE#         47
+  C:0819H         LINE#         48
+  C:081BH         LINE#         49
+  C:081EH         LINE#         50
+  C:0823H         LINE#         51
+  C:0825H         LINE#         52
+  C:0828H         LINE#         53
+  C:082DH         LINE#         54
+  C:0832H         LINE#         55
+  C:0837H         LINE#         56
+  C:083CH         LINE#         57
+  -------         ENDPROC       NAME
+  -------         PROC          MICROCONTROLLER_INIT
+  C:085BH         LINE#         59
+  C:085BH         LINE#         60
+  C:085BH         LINE#         61
+  C:085EH         LINE#         62
+  C:0865H         LINE#         63
+  C:0868H         LINE#         64
+  C:086BH         LINE#         65
+  C:086EH         LINE#         66
+  -------         ENDPROC       MICROCONTROLLER_INIT
+  -------         PROC          MAIN
+  C:08A1H         LINE#         69
+  C:08A1H         LINE#         70
+  C:08A1H         LINE#         72
+  C:08A4H         LINE#         73
+  C:08A7H         LINE#         74
+  C:08A7H         LINE#         75
+  C:08A7H         LINE#         76
+  C:08AAH         LINE#         77
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        TASK01
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00B9H BYTE ( 9%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=185
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

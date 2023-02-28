@@ -1,0 +1,74 @@
+C51 COMPILER V9.60.0.0   TASK02                                                            08/01/2022 22:09:54 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TASK02
+OBJECT MODULE PLACED IN .\Objects\task02.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE task02.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\ta
+                    -sk02.lst) TABS(2) OBJECT(.\Objects\task02.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <stdio.h>
+   3          #define output P2
+   4          sbit unit=P3^0;
+   5          sbit ten=P3^1;
+   6          sbit button=P3^4;       //timer zero 
+   7          
+   8          int x;
+   9          int U=0,T=0;
+  10          unsigned char out[]={ 0x40,0x79,0x24,0x30,0x19,0x12,0x02,0x78,0x00,0x10};
+  11          
+  12          void init_counter()   //iniitalize counter
+  13          {
+  14   1         TMOD=0x06;    //timer 0, mode 2 , 8-bits register..  we can also use 0x05  timer 0, mode 1 , 16-bits re
+             -gister. the rest part of the code will be same.
+  15   1         TL0=0x00;      //start from 0. it will be incrementing by pressing button.
+  16   1      }
+  17          void start_counter()   //start counter
+  18          {
+  19   1         TR0=1;
+  20   1      }
+  21          
+  22          void main(void)
+  23           { 
+  24   1         int value=0;
+  25   1          button=1;       //configure as input.
+  26   1          init_counter() ;
+  27   1          start_counter();
+  28   1          
+  29   1         while (1)
+  30   1         {
+  31   2            unit=1; ten=0;
+  32   2            value=TL0;
+  33   2            U=value%10;
+  34   2            T=value/10;
+  35   2            
+  36   2            output=out[U];
+  37   2            for(x=0; x<10000; x++);     //display unit part for some delay.
+  38   2         
+  39   2            unit=0; ten=1;
+  40   2            output=out[T];
+  41   2            for(x=0; x<10000; x++);  //display ten part for some delay.
+  42   2      
+  43   2            if(value==100)
+  44   2         TL0=0;
+  45   2         }
+  46   1            
+  47   1       }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    131    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+C51 COMPILER V9.60.0.0   TASK02                                                            08/01/2022 22:09:54 PAGE 2   
+
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     16    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

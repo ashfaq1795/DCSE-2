@@ -1,0 +1,60 @@
+C51 COMPILER V9.60.0.0   TASK01                                                            08/01/2022 22:29:00 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TASK01
+OBJECT MODULE PLACED IN .\Objects\Task01.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Task01.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\Ta
+                    -sk01.lst) TABS(2) OBJECT(.\Objects\Task01.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <stdio.h>
+   3          #define seven_seg P2
+   4          
+   5          sbit Unit=P3^0;
+   6          sbit Ten=P3^1;
+   7          
+   8          unsigned int count=0;
+   9          int u=0;
+  10          int t=0;
+  11          int x;
+  12          unsigned char ch[]={0x40,0x79,0x24,0x30,0x19,0x12,0x02,0x78,0x00,0x10};   
+  13          //{0,1,2,3,4,5,6,7,8,9} seven segemnt code in hex for active low (0).
+  14          
+  15          
+  16          void main(void)
+  17           { 
+  18   1         while (1)
+  19   1         {
+  20   2            Unit=1;Ten=0;   //we can't use both seven segment at a time.
+  21   2            u=count%10;
+  22   2            t=count/10;
+  23   2            seven_seg=ch[u];
+  24   2            
+  25   2            for(x=0; x<20000; x++);
+  26   2            
+  27   2            Unit=0; Ten=1;
+  28   2            seven_seg=ch[t];
+  29   2            
+  30   2            for(x=0; x<20000; x++);
+  31   2             count++;
+  32   2            if(count==100)
+  33   2            count=0;
+  34   2         }
+  35   1            
+  36   1       }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    116    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     18    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

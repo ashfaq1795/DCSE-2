@@ -1,0 +1,65 @@
+C51 COMPILER V9.60.0.0   TASK03                                                            08/02/2022 15:24:51 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TASK03
+OBJECT MODULE PLACED IN .\Objects\Task03.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Task03.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\Ta
+                    -sk03.lst) TABS(2) OBJECT(.\Objects\Task03.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <stdio.h>
+   3          int Array[10] = {0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F};
+   4          int cnt,num,temp,i;
+   5          void Delay(unsigned int time)
+   6          {
+   7   1           unsigned int x,y;
+   8   1           for(x = 0;x<time;x++)
+   9   1           for(y = 0;y<123;y++);
+  10   1      }
+  11          void main(void)
+  12          { 
+  13   1           while (1)
+  14   1           {
+  15   2             for (cnt = 0; cnt <= 9999; cnt++) 
+  16   2             {
+  17   3                 for (i = 0; i < 20; i++)
+  18   3                 {
+  19   4                       num = cnt;
+  20   4                       temp = num / 1000;
+  21   4                       num = num % 1000;
+  22   4                       P3 = 0xFE; 
+  23   4                       P2 = Array[temp]; 
+  24   4                       Delay(1);
+  25   4                       temp = num / 100;
+  26   4                       num = num % 100;
+  27   4                       P3 = 0xFD; 
+  28   4                       P2 = Array[temp];
+  29   4                       Delay(1);
+  30   4                       temp = num / 10;
+  31   4                       P3 = 0xFB;
+  32   4                       P2 = Array[temp];
+  33   4                       Delay(1);
+  34   4                       temp = num % 10;
+  35   4                       P3 = 0xF7;
+  36   4                       P2 = Array[temp];
+  37   4                       Delay(8); 
+  38   4                 }
+  39   3             }
+  40   2           }
+  41   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    239    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     28    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

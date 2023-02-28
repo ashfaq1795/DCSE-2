@@ -1,0 +1,10 @@
+ORG 00H
+	HERE:
+	MOV A,#0FFH
+	MOV P1,A
+	MOV P2,A
+	MOV A,#00H
+	MOV P1,A
+	MOV P2,A
+	SJMP HERE  ;short jump
+END

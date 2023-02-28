@@ -1,0 +1,82 @@
+C51 COMPILER V9.60.0.0   TASK01                                                            07/25/2022 14:06:53 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TASK01
+OBJECT MODULE PLACED IN .\Objects\Task01.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Task01.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\Ta
+                    -sk01.lst) TABS(2) OBJECT(.\Objects\Task01.obj)
+
+line level    source
+
+   1          #include <reg51.h>   //oscillator clock frequency= 12MHz, time period=1us 
+   2          #include <stdio.h>
+   3          sbit led1=P1^0;
+   4          sbit led2=P1^1;
+   5          sbit led3=P1^2;
+   6          sbit led4=P1^3;
+   7          
+   8          //we need 20ms delay in ISR
+   9          //20ms/1us=20000    and 65535-20000.
+  10          //Note: timer register value increase in each micro-second if clcok F=12Mhz. 
+  11          //so 20000 wil take 20000 us and 20000us=20ms.
+  12          
+  13          int i;
+  14          void delay()
+  15          {
+  16   1        TMOD=0x01;    //timer 0 of mode 16 bit
+  17   1        for(i = 0; i<100; i++)
+  18   1        {
+  19   2          TH0 = 0xB1;   //FFFF-4C13=B1DF=45535
+  20   2          TL0 = 0xDF;
+  21   2          TR0=1;
+  22   2          while(TF0 == 0);
+  23   2          TF0 = 0;
+  24   2          TR0 = 0;
+  25   2        }
+  26   1      }
+  27          
+  28            
+  29          void ISR() interrupt 0
+  30            {
+  31   1          led1=~led1;
+  32   1          led2=~led2;
+  33   1          led3=~led3;
+  34   1          led4=~led4;
+  35   1          delay();  
+  36   1        }
+  37          void main()
+  38          {
+  39   1        IE=0x81;
+  40   1        IT0=1;
+  41   1        while(1)
+  42   1        {
+  43   2          led1=1;
+  44   2          led2=0;
+  45   2          led3=1;
+  46   2          led4=0;
+  47   2        }
+  48   1      }
+  49          
+  50          
+  51          
+  52          
+  53          
+  54          
+C51 COMPILER V9.60.0.0   TASK01                                                            07/25/2022 14:06:53 PAGE 2   
+
+  55          
+  56          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     69    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

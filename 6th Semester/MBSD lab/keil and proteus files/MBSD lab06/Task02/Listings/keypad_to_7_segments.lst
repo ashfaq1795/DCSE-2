@@ -1,0 +1,94 @@
+C51 COMPILER V9.60.0.0   KEYPAD_TO_7_SEGMENTS                                              05/30/2022 15:27:15 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE KEYPAD_TO_7_SEGMENTS
+OBJECT MODULE PLACED IN .\Objects\keypad_to_7_segments.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE keypad_to_7_segments.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT
+                    -(.\Listings\keypad_to_7_segments.lst) TABS(2) OBJECT(.\Objects\keypad_to_7_segments.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <stdio.h>
+   3          sbit c1=P1^0;
+   4          sbit c2=P1^1;
+   5          sbit c3=P1^2;
+   6          sbit r1=P1^3;
+   7          sbit r2=P1^4;
+   8          sbit r3=P1^5;
+   9          sbit r4=P1^6;
+  10          
+  11          
+  12          void main()
+  13          { 
+  14   1        while(1)
+  15   1        {
+  16   2        P2=0xFF;  //active low
+  17   2        r1=r2=r3=r4=1;
+  18   2        r1=0;
+  19   2          if(c1==0)
+  20   2          {
+  21   3            P2=0xF9;
+  22   3          }
+  23   2          else if(c2==0)
+  24   2          {
+  25   3            P2=0xA4;
+  26   3          }
+  27   2          else if(c3==0)
+  28   2          {
+  29   3            P2=0xB0;
+  30   3          }
+  31   2        
+  32   2        r1=r3=r4=1;
+  33   2        r2=0;
+  34   2          if(c1==0)
+  35   2          {
+  36   3            P2=0x99;
+  37   3          }
+  38   2          else if(c2==0)
+  39   2          {
+  40   3            P2=0x92;
+  41   3          }
+  42   2          else if(c3==0)
+  43   2          {
+  44   3            P2=0x82;
+  45   3          }
+  46   2        
+  47   2        r3=0;
+  48   2        r1=r2=r4=1;
+  49   2          if(c1==0)
+  50   2          {
+  51   3            P2=0xF8;
+  52   3          }
+  53   2          else if(c2==0)
+  54   2          {
+C51 COMPILER V9.60.0.0   KEYPAD_TO_7_SEGMENTS                                              05/30/2022 15:27:15 PAGE 2   
+
+  55   3            P2=0x80;
+  56   3          }
+  57   2          else if(c3==0)
+  58   2          {
+  59   3            P2=0x90;
+  60   3          }
+  61   2        r4=0;
+  62   2        r1=r2=r3=1;
+  63   2          if(c2==0)
+  64   2          {
+  65   3            P2=0xC0;
+  66   3          }
+  67   2        }
+  68   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    111    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

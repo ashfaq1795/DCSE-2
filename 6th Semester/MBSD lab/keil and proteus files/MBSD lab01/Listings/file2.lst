@@ -1,0 +1,36 @@
+C51 COMPILER V9.60.0.0   FILE2                                                             04/18/2022 21:51:31 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE FILE2
+OBJECT MODULE PLACED IN .\Objects\file2.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE file2.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\fil
+                    -e2.lst) TABS(2) OBJECT(.\Objects\file2.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          
+   3          int main()
+   4          {
+   5   1        while(1)
+   6   1        {
+   7   2          P1=0x00;
+   8   2          P1=0xFF;
+   9   2        }
+  10   1        return 0;
+  11   1      }
+*** WARNING C294 IN LINE 10 OF file2.c: unreachable code
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =      8    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

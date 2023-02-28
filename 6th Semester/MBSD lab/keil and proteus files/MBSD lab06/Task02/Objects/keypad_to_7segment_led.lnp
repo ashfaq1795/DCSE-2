@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\keypad_to_7_segments.obj" 
+TO ".\Objects\keypad_to_7segment_led" 
+PRINT(".\Listings\keypad_to_7segment_led.m51")

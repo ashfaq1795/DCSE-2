@@ -1,0 +1,58 @@
+A51 MACRO ASSEMBLER  TASK02                                                               08/02/2022 14:25:22 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Task02.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Task02.a51 SET(SMALL) DEBUG PRINT(.\Listings\Task02.lst) OBJECT(.\Objec
+                      ts\Task02.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org 000h
+0000                   2     start:
+0000 7400              3             MOV A,#0
+0002 790A              4             mov R1,#10
+0004                   5     TEN:
+0004 7A0A              6             mov R2,#10
+0006                   7     UNIT1:
+0006 F5A0              8             MOV P2,A
+0008 2401              9             ADD A,#1
+000A 1115             10             acall DELAY
+000C DAF8             11             DJNZ R2,UNIT1
+000E 2406             12             ADD A,#6     ;After each 10 digit add 6 to converthex to decimal
+0010 D9F2             13             DJNZ R1,TEN
+0012 020000           14     LJMP start
+                      15     
+0015                  16     DELAY:
+0015 7CFF             17      MOV R4,#255
+0017                  18     AGAIN:
+0017 7DFF             19      MOV R5,#255
+0019                  20     HERE:
+0019 00               21      NOP
+001A 00               22      NOP
+001B DDFC             23      DJNZ R5,HERE
+001D DCF8             24      DJNZ R4,AGAIN
+001F 22               25      RET
+                      26      
+                      27     END
+A51 MACRO ASSEMBLER  TASK02                                                               08/02/2022 14:25:22 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0017H   A   
+DELAY. . . . . . .  C ADDR   0015H   A   
+HERE . . . . . . .  C ADDR   0019H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+START. . . . . . .  C ADDR   0000H   A   
+TEN. . . . . . . .  C ADDR   0004H   A   
+UNIT1. . . . . . .  C ADDR   0006H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

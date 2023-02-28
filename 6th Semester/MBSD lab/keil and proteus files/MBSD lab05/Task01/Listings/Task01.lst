@@ -1,0 +1,77 @@
+A51 MACRO ASSEMBLER  TASK01                                                               08/02/2022 01:44:39 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Task01.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Task01.a51 SET(SMALL) DEBUG PRINT(.\Listings\Task01.lst) OBJECT(.\Objec
+                      ts\Task01.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org 000h
+                       2     
+0000                   3     start:
+                       4      
+0000 75A03F            5     Mov P2,#3FH
+0003 1134              6     acall delay
+                       7     
+0005 75A006            8     Mov P2,#06H
+0008 1134              9     acall delay
+                      10     
+000A 75A05B           11     Mov P2,#5BH
+000D 1134             12     acall delay
+                      13     
+000F 75A04F           14     Mov P2,#4FH
+0012 1134             15     acall delay
+                      16     
+0014 75A066           17     Mov P2,#66H
+0017 1134             18     acall delay
+                      19     
+0019 75A06D           20     Mov P2,#6DH
+001C 1134             21     acall delay
+                      22     
+001E 75A07D           23     Mov P2,#7DH
+0021 1134             24     acall delay
+                      25     
+0023 75A007           26     Mov P2,#07H
+0026 1134             27     acall delay
+                      28     
+0028 75A07F           29     Mov P2,#7FH
+002B 1134             30     acall delay
+                      31     
+002D 75A06F           32     Mov P2,#6FH
+0030 1134             33     acall delay
+                      34     
+0032 80CC             35     sjmp start
+                      36     
+                      37     
+0034                  38     delay:
+0034 79FA             39     Mov R1,#250
+0036                  40     loop1:
+0036 7AFA             41     Mov R2,#250
+0038                  42     loop2:
+0038 00               43         NOP
+0039 00               44             NOP
+003A DAFC             45             DJNZ R2,loop2
+003C D9F8             46             DJNZ R1,loop1
+003E 22               47     ret
+                      48     end
+A51 MACRO ASSEMBLER  TASK01                                                               08/02/2022 01:44:39 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY. . . . . . .  C ADDR   0034H   A   
+LOOP1. . . . . . .  C ADDR   0036H   A   
+LOOP2. . . . . . .  C ADDR   0038H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+START. . . . . . .  C ADDR   0000H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

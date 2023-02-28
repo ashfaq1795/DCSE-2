@@ -1,0 +1,22 @@
+ORG 0000H
+Start:
+ MOV R1,#0F0H
+ MOV P1,R1
+ ACALL Delay
+ MOV R2,#0FH
+ MOV P1,R2
+ ACALL Delay
+ 
+ SJMP Start
+ 
+Delay:
+ MOV R3,#250
+AGAIN:
+ MOV R4,#250
+HERE:
+ NOP
+ NOP
+ DJNZ R4,HERE
+ DJNZ R3,AGAIN
+ RET
+ END
