@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\edge_vs_Level_trigger.obj" 
+TO ".\Objects\Edge_vs_level_Trigger" 
+PRINT(".\Listings\Edge_vs_level_Trigger.m51")

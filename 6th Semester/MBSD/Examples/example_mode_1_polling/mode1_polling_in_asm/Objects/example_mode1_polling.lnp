@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\code.obj" 
+TO ".\Objects\example_mode1_polling" 
+PRINT(".\Listings\example_mode1_polling.m51")

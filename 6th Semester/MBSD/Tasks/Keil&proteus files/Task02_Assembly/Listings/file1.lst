@@ -1,0 +1,93 @@
+A51 MACRO ASSEMBLER  FILE1                                                                04/18/2022 02:33:19 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\file1.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE file1.a51 SET(SMALL) DEBUG PRINT(.\Listings\file1.lst) OBJECT(.\Objects
+                      \file1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org 0
+                       2             
+0000                   3     start:
+0000 D292              4     setb p1.2
+0002 D291              5     setb p1.1
+0004 110F              6     acall DELAY1
+0006 C292              7     clr p1.2
+0008 110F              8     acall DELAY1
+000A 30911A            9     jnb p1.1,AAA
+000D 80F1             10     sjmp start
+000F                  11     DELAY1: 
+000F 7902             12             mov r1,#2
+0011                  13     loop1:
+0011 7AFA             14          MOV r2,#250
+0013                  15     loop2:
+0013 00               16          nop 
+0014 00               17              nop
+0015 DAFC             18              djnz r2,loop2
+0017 D9F8             19              djnz r1,loop1
+0019 20920A           20              jb p1.2,return
+001C 7901             21              mov r1,#1
+001E                  22     loop3:
+001E 7AFA             23          MOV r2,#250
+0020                  24     loop4:
+0020 00               25          nop 
+0021 00               26              nop
+0022 DAFC             27              djnz r2,loop4
+0024 D9F8             28              djnz r1,loop3
+0026                  29     return:
+0026 22               30          ret 
+                      31     
+0027                  32     AAA:
+0027                  33     DELAY2:
+0027 7904             34     mov r1,#4
+0029                  35     loop5:
+0029 7AFA             36          MOV r2,#250
+002B                  37     loop6:
+002B 00               38          nop 
+002C 00               39              nop
+002D DAFC             40              djnz r2,loop6
+002F D9F8             41              djnz r1,loop5
+0031 30920A           42              jnb p1.2,return1
+0034 7902             43              mov r1,#2
+0036                  44     loop7:
+0036 7AFA             45          MOV r2,#250
+0038                  46     loop8:
+0038 00               47          nop 
+0039 00               48              nop
+003A DAFC             49              djnz r2,loop8
+003C D9F8             50              djnz r1,loop7
+003E                  51     return1:
+003E 22               52          ret
+                      53     end
+                                     
+A51 MACRO ASSEMBLER  FILE1                                                                04/18/2022 02:33:19 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AAA. . . . . . . .  C ADDR   0027H   A   
+DELAY1 . . . . . .  C ADDR   000FH   A   
+DELAY2 . . . . . .  C ADDR   0027H   A   
+LOOP1. . . . . . .  C ADDR   0011H   A   
+LOOP2. . . . . . .  C ADDR   0013H   A   
+LOOP3. . . . . . .  C ADDR   001EH   A   
+LOOP4. . . . . . .  C ADDR   0020H   A   
+LOOP5. . . . . . .  C ADDR   0029H   A   
+LOOP6. . . . . . .  C ADDR   002BH   A   
+LOOP7. . . . . . .  C ADDR   0036H   A   
+LOOP8. . . . . . .  C ADDR   0038H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+RETURN . . . . . .  C ADDR   0026H   A   
+RETURN1. . . . . .  C ADDR   003EH   A   
+START. . . . . . .  C ADDR   0000H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

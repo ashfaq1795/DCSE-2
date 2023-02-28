@@ -1,0 +1,103 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    07/17/2022  00:08:57  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\code.obj TO .\Objects\example_mode1_interrupt PRINT (.\Listings\example_mode1_inte
+>> rrupt.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\code.obj (CODE)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\example_mode1_interrupt (CODE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+                    000EH     07F2H                  *** GAP ***
+            CODE    0800H     000DH     UNIT         ?PR?INIT_TIMER?CODE
+            CODE    080DH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0819H     0009H     UNIT         ?PR?TIMER0?CODE
+            CODE    0822H     0007H     UNIT         ?PR?MAIN?CODE
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\example_mode1_interrupt (CODE)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?CODE
+
+?PR?MAIN?CODE
+  +--> ?PR?INIT_TIMER?CODE
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\example_mode1_interrupt (CODE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        CODE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A8H         PUBLIC        IE
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/17/2022  00:08:57  PAGE 2
+
+
+  C:0822H         PUBLIC        main
+  D:0089H         PUBLIC        TMOD
+  B:0090H.1       PUBLIC        led
+  C:0800H         PUBLIC        init_timer
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  C:0819H         PUBLIC        timer0
+  B:0088H.4       PUBLIC        TR0
+  -------         PROC          TIMER0
+  C:0819H         LINE#         11
+  C:0819H         LINE#         13
+  C:081BH         LINE#         14
+  C:081EH         LINE#         15
+  C:0821H         LINE#         16
+  -------         ENDPROC       TIMER0
+  -------         PROC          INIT_TIMER
+  C:0800H         LINE#         21
+  C:0800H         LINE#         22
+  C:0800H         LINE#         23
+  C:0803H         LINE#         24
+  C:0806H         LINE#         25
+  C:0809H         LINE#         26
+  C:080CH         LINE#         27
+  -------         ENDPROC       INIT_TIMER
+  -------         PROC          MAIN
+  C:0822H         LINE#         29
+  C:0822H         LINE#         30
+  C:0822H         LINE#         31
+  C:0825H         LINE#         32
+  C:0827H         LINE#         33
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        CODE
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0020H BYTE ( 1%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=47
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

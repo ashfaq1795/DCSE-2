@@ -1,0 +1,72 @@
+C51 COMPILER V9.60.0.0   CODE                                                              07/16/2022 23:52:42 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE CODE
+OBJECT MODULE PLACED IN .\Objects\code.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE code.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\code
+                    -.lst) TABS(2) OBJECT(.\Objects\code.obj)
+
+line level    source
+
+   1          //generate a square wave (duty cycle 50%) of 13kHz at P1.5. use timer mode 2. the oscillator clock frequen
+             -cy is 15Mhz.
+   2          
+   3          /*
+   4          >>oscillator clock frequency=15Mhz so timer's clock frequency=1.25MHz,   timer clock's time period=800ns.
+   5          >>we will change oscialltor frequency menually.
+   6          >>we need a signal of frequency 13khz   time period=1/13k=77us.
+   7          >>so it will on for 38.5us and off for 38.5us.
+   8          >>for 38.5us=38.5us/800ns=48 cycle required  to give 38.5 ms delay if oscillator frequency= 15Mhz.
+   9          >>FF-CF=48 cycle
+  10          
+  11          */
+  12          #include <reg51.h>
+  13          #include <std.h>
+*** WARNING C318 IN LINE 13 OF code.c: can't open file 'std.h'
+  14          
+  15          sbit led=P1^1;
+  16          
+  17          void init_timer1()
+  18          {
+  19   1        TMOD=0x20;     //timer 1 mode 2  autoreload mode
+  20   1        TH1=0xCF;      //it give a copy to TL1 and starts increment when TR1 is set to 1 and after each roll over
+             - it again give a copy 
+  21   1                       //of CF to TL1 and control  go to ISR. there complement the signal and again timer increme
+             -nting and so on.
+  22   1        IE=0x88;    //enable EA bit and ET1.
+  23   1      }
+  24          void start_timer1()
+  25          {
+  26   1        TR1=1;
+  27   1      }
+  28          void ISR_timer1() interrupt 3
+  29          {
+  30   1        led^=1;    //xor operation.
+  31   1      }
+  32          
+  33          void main()
+  34          {
+  35   1        init_timer1();
+  36   1        start_timer1();
+  37   1        
+  38   1        while(1);
+  39   1        
+  40   1      }
+  41            
+  42            
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     31    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+C51 COMPILER V9.60.0.0   CODE                                                              07/16/2022 23:52:42 PAGE 2   
+
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

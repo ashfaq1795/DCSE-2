@@ -1,0 +1,73 @@
+C51 COMPILER V9.60.0.0   CODE                                                              07/17/2022 00:08:54 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE CODE
+OBJECT MODULE PLACED IN .\Objects\code.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE code.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\code
+                    -.lst) TABS(2) OBJECT(.\Objects\code.obj)
+
+line level    source
+
+   1          //generate a square wave at P1.1 having pulse time period  5 msec using timer mode 1. the oscillator clock
+             - frequency is 12Mhz. use timer interrupt.
+   2          
+   3          //for 5ms=5ms/1us=5000 clock cycle required to generate 5ms delay if oscillator F=12Mhz.
+   4          //FFFF-EC77=5000. we will put EC77
+   5          
+   6          #include <reg51.h>
+   7          #include <stdio.h>
+   8          
+   9          sbit led=P1^1;
+  10          
+  11          void timer0() interrupt 1  //ISR    1 mean timer 0 interrupt. 
+  12          {
+  13   1          led=~led;
+  14   1          TL0=0x77;    //not autoreload mode.
+  15   1          TH0=0xEC;
+  16   1      }
+  17          
+  18          //whenever TL0 and TH0 roll over control move to interrupt service routine (timer0() interrupt 1) and ther
+             -e signal become toggled 
+  19          //and TL0 and TH0 again loaded. after loading, TL0 and TH0 again start incrementing as we have already sta
+             -rted Timer at once (TR0=1).
+  20          
+  21          void init_timer()
+  22          {
+  23   1           TMOD=0x01;         // timer 0       mode 1
+  24   1           TL0=0x77;
+  25   1           TH0=0xEC;        //5 ms delay.  whenever timer register roll over it will go to ISR.
+  26   1           IE=0x82;       //enable EA bit and enable ET0 (enable timer 0 interrupt).
+  27   1      }
+  28          
+  29          void main(void)
+  30           { 
+  31   1        init_timer();
+  32   1        TR0=1;        //timer start. 
+  33   1        while (1);    
+  34   1       }
+  35           
+  36           
+  37           
+  38           
+  39           //in interrupt case for both mode 1 and mode 2 we initialize TMOD and TRx at once.
+  40           
+  41           
+  42           
+  43           
+  44           
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     29    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+C51 COMPILER V9.60.0.0   CODE                                                              07/17/2022 00:08:54 PAGE 2   
+
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

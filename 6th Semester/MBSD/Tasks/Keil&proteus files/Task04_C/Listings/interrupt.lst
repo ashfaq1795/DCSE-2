@@ -1,0 +1,88 @@
+C51 COMPILER V9.60.0.0   INTERRUPT                                                         05/23/2022 05:28:14 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE INTERRUPT
+OBJECT MODULE PLACED IN .\Objects\interrupt.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE interrupt.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings
+                    -\interrupt.lst) TABS(2) OBJECT(.\Objects\interrupt.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <stdio.h>
+   3          sbit signal=P2^0;
+   4          sbit button=P3^2;
+   5          unsigned int count=0;
+   6          void delay(unsigned char th0,unsigned char tl0)
+   7          {
+   8   1        TMOD=0x01;
+   9   1        TH0=th0;
+  10   1        TL0=tl0;
+  11   1        TR0=1;
+  12   1        while (TF0==0);
+  13   1        TF0=0;
+  14   1        TR0=0;  
+  15   1      }
+  16          void ISR() interrupt 0
+  17          {
+  18   1         count=count+1;
+  19   1      }
+  20          
+  21          void main()
+  22          {
+  23   1        IE=0x81; //EA=1 and EX0=1;
+  24   1        IT0=1;  
+  25   1        signal=1;  //make input pin.
+  26   1        button=1; //initially button not pressed.
+  27   1        while(1)
+  28   1        {   
+  29   2       if(count%3==0)
+  30   2       {
+  31   3      
+  32   3            signal=1;
+  33   3            delay(0xFC,0x18);  //0.5 ms
+  34   3            signal=0;
+  35   3            delay(0xF4,0x48);  //1.5 ms
+  36   3       }
+  37   2       else
+  38   2       if(count%3==1)
+  39   2       {
+  40   3        
+  41   3            signal=1;
+  42   3            delay(0xFC,0x18);   //0.5 ms
+  43   3            signal=0;
+  44   3            delay(0xFC,0x18);   //0.5 ms
+  45   3       }
+  46   2       else
+  47   2       if(count%3==2)
+  48   2       {
+  49   3            signal=1;
+  50   3            delay(0xFD,0x12);  //0.375 ms
+  51   3            signal=0;
+  52   3            delay(0xFF,0x06);  //0.125 ms
+  53   3         
+  54   3       }  
+C51 COMPILER V9.60.0.0   INTERRUPT                                                         05/23/2022 05:28:14 PAGE 2   
+
+  55   2        }
+  56   1      }
+  57          
+  58          
+  59          
+  60          
+  61          
+  62          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    128    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

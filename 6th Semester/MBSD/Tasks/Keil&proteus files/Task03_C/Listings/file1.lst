@@ -1,0 +1,82 @@
+C51 COMPILER V9.60.0.0   FILE1                                                             04/25/2022 12:32:50 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE FILE1
+OBJECT MODULE PLACED IN .\Objects\file1.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE file1.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\fil
+                    -e1.lst) TABS(2) OBJECT(.\Objects\file1.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <stdio.h>
+   3          sbit signal=P1^1;
+   4          sbit button=P1^2;
+   5          unsigned int i;
+   6          void Delay(int TH0_reg,int TL0_reg )  //give 1.085 micro sec delay.
+   7          { 
+   8   1         TMOD=01;
+   9   1         TH0=TH0_reg;
+  10   1         TL0=TL0_reg;
+  11   1         TR0=1;
+  12   1         while(TF0==0);
+  13   1            TR0=0;
+  14   1            TF0=0; 
+  15   1      }
+  16          void main()
+  17           { 
+  18   1          int count=0;
+  19   1          button=1;
+  20   1          while(1)
+  21   1          {    
+  22   2        if(button==0)
+  23   2        {
+  24   3           count++;
+  25   3        }
+  26   2        if(count%4==0)
+  27   2        {
+  28   3           signal=1;
+  29   3           Delay(0xDB,0xFE);    //10msec
+  30   3           signal=0;
+  31   3          for(i=1; i<10; i++)
+  32   3           Delay(0xDB,0xFE);     //10x9=90 msec
+  33   3        }
+  34   2        if(count%4==1)
+  35   2        {
+  36   3           signal=1;
+  37   3           Delay(0xDB,0xFE);  //10 msec
+  38   3           signal=0;
+  39   3           Delay(0x6F,0xFD);    //40 msec
+  40   3        }
+  41   2        if(count%4==2)
+  42   2        {
+  43   3           signal=1;
+  44   3           Delay(0xDB,0xFE);  //10 msec
+  45   3           signal=0;
+  46   3           Delay(0xC9,0xFF);   //15 msec
+  47   3        }
+  48   2        if(count%4==3)
+  49   2        {
+  50   3           signal=1;
+  51   3           Delay(0xDB,0xFE);  //10 msec
+  52   3           signal=0;
+  53   3           Delay(0xF6,0xFF);  //2.5 msec
+  54   3        }
+C51 COMPILER V9.60.0.0   FILE1                                                             04/25/2022 12:32:50 PAGE 2   
+
+  55   2       }
+  56   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    181    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

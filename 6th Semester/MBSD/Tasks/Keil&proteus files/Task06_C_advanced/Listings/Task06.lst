@@ -1,0 +1,334 @@
+C51 COMPILER V9.60.0.0   TASK06                                                            08/18/2022 20:25:17 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TASK06
+OBJECT MODULE PLACED IN .\Objects\Task06.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Task06.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\Ta
+                    -sk06.lst) TABS(2) OBJECT(.\Objects\Task06.obj)
+
+line level    source
+
+   1          //it will take only one digit before and after operator
+   2          
+   3          #include <reg51.h>
+   4          #include <stdio.h>
+   5          
+   6          //Functions 7
+   7          void Ports_init();
+   8          void lcd_init();
+   9          void delay(int);
+  10          void writedata(char);
+  11          void writedata1(float);
+  12          void writecmd(int);
+  13          float read_keypad();
+  14          float get_key();
+  15            
+  16          //pins names
+  17          sbit RA=P1^0;   //rows
+  18          sbit RB=P1^1;
+  19          sbit RC=P1^2;
+  20          sbit RX=P1^3;     //i can't write RD b/c i think it's a keyword.
+  21          
+  22          sbit C1=P1^4;  //columns 
+  23          sbit C2=P1^5;
+  24          sbit C3=P1^6;
+  25          sbit C4=P1^7;
+  26          
+  27          sbit RS=P3^0;  //control pins..
+  28          sbit E=P3^1;
+  29          
+  30            
+  31          //veriables
+  32          unsigned int index=0,int_result;
+  33          char arr[3],char_result;  
+  34          float optr[5]={('+'-'0'),('-'-'0'),('x'-'0'),('/'-'0'),('='-'0')}
+  35          //main function
+  36          void main()
+*** ERROR C141 IN LINE 36 OF Task06.c: syntax error near 'void', expected ';'
+  37          {
+*** ERROR C141 IN LINE 37 OF Task06.c: syntax error near '{', expected ';'
+  38            char key;
+  39            lcd_init();
+*** ERROR C231 IN LINE 39 OF Task06.c: 'lcd_init': redefinition
+  40            
+  41            
+  42            writecmd(0x94);   //Sets cursor to line 3 of display
+*** ERROR C141 IN LINE 42 OF Task06.c: syntax error near '0x94', expected 'bit'
+*** ERROR C231 IN LINE 42 OF Task06.c: '_writecmd': redefinition
+  43            writedata('A');
+*** ERROR C141 IN LINE 43 OF Task06.c: syntax error near ''A'', expected 'bit'
+*** ERROR C231 IN LINE 43 OF Task06.c: '_writedata': redefinition
+  44            writedata('S');
+*** ERROR C141 IN LINE 44 OF Task06.c: syntax error near ''S'', expected 'bit'
+*** ERROR C231 IN LINE 44 OF Task06.c: '_writedata': redefinition
+  45            writedata('H');
+C51 COMPILER V9.60.0.0   TASK06                                                            08/18/2022 20:25:17 PAGE 2   
+
+*** ERROR C141 IN LINE 45 OF Task06.c: syntax error near ''H'', expected 'bit'
+*** ERROR C231 IN LINE 45 OF Task06.c: '_writedata': redefinition
+  46            writedata('F');
+*** ERROR C141 IN LINE 46 OF Task06.c: syntax error near ''F'', expected 'bit'
+*** ERROR C231 IN LINE 46 OF Task06.c: '_writedata': redefinition
+  47            writedata('A');
+*** ERROR C141 IN LINE 47 OF Task06.c: syntax error near ''A'', expected 'bit'
+*** ERROR C231 IN LINE 47 OF Task06.c: '_writedata': redefinition
+  48            writedata('Q');
+*** ERROR C141 IN LINE 48 OF Task06.c: syntax error near ''Q'', expected 'bit'
+*** ERROR C231 IN LINE 48 OF Task06.c: '_writedata': redefinition
+  49            writedata(' ');
+*** ERROR C141 IN LINE 49 OF Task06.c: syntax error near '' '', expected 'bit'
+*** ERROR C231 IN LINE 49 OF Task06.c: '_writedata': redefinition
+  50            writedata('A');
+*** ERROR C141 IN LINE 50 OF Task06.c: syntax error near ''A'', expected 'bit'
+*** ERROR C231 IN LINE 50 OF Task06.c: '_writedata': redefinition
+  51            writedata('H');
+*** ERROR C141 IN LINE 51 OF Task06.c: syntax error near ''H'', expected 'bit'
+*** ERROR C231 IN LINE 51 OF Task06.c: '_writedata': redefinition
+  52            writedata('M');
+*** ERROR C141 IN LINE 52 OF Task06.c: syntax error near ''M'', expected 'bit'
+*** ERROR C231 IN LINE 52 OF Task06.c: '_writedata': redefinition
+  53            writedata('A');
+*** ERROR C141 IN LINE 53 OF Task06.c: syntax error near ''A'', expected 'bit'
+*** ERROR C231 IN LINE 53 OF Task06.c: '_writedata': redefinition
+  54            writedata('D');
+*** ERROR C141 IN LINE 54 OF Task06.c: syntax error near ''D'', expected 'bit'
+*** ERROR C231 IN LINE 54 OF Task06.c: '_writedata': redefinition
+  55            writecmd(0xD4);    //Sets cursor to line 4 of display
+*** ERROR C141 IN LINE 55 OF Task06.c: syntax error near '0xD4', expected 'bit'
+*** ERROR C231 IN LINE 55 OF Task06.c: '_writecmd': redefinition
+  56            writedata('M');
+*** ERROR C141 IN LINE 56 OF Task06.c: syntax error near ''M'', expected 'bit'
+*** ERROR C231 IN LINE 56 OF Task06.c: '_writedata': redefinition
+  57            writedata('B');
+*** ERROR C141 IN LINE 57 OF Task06.c: syntax error near ''B'', expected 'bit'
+*** ERROR C231 IN LINE 57 OF Task06.c: '_writedata': redefinition
+  58            writedata('S');
+*** ERROR C141 IN LINE 58 OF Task06.c: syntax error near ''S'', expected 'bit'
+*** ERROR C231 IN LINE 58 OF Task06.c: '_writedata': redefinition
+  59            writedata('D');
+*** ERROR C141 IN LINE 59 OF Task06.c: syntax error near ''D'', expected 'bit'
+*** ERROR C231 IN LINE 59 OF Task06.c: '_writedata': redefinition
+  60            writedata(' ');
+*** ERROR C141 IN LINE 60 OF Task06.c: syntax error near '' '', expected 'bit'
+*** ERROR C231 IN LINE 60 OF Task06.c: '_writedata': redefinition
+  61            writedata('T');
+*** ERROR C141 IN LINE 61 OF Task06.c: syntax error near ''T'', expected 'bit'
+*** ERROR C231 IN LINE 61 OF Task06.c: '_writedata': redefinition
+  62            writedata('A');
+*** ERROR C141 IN LINE 62 OF Task06.c: syntax error near ''A'', expected 'bit'
+*** ERROR C231 IN LINE 62 OF Task06.c: '_writedata': redefinition
+  63            writedata('S');
+*** ERROR C141 IN LINE 63 OF Task06.c: syntax error near ''S'', expected 'bit'
+*** ERROR C231 IN LINE 63 OF Task06.c: '_writedata': redefinition
+  64            writedata('K');
+*** ERROR C141 IN LINE 64 OF Task06.c: syntax error near ''K'', expected 'bit'
+*** ERROR C231 IN LINE 64 OF Task06.c: '_writedata': redefinition
+  65            writedata('0');
+*** ERROR C141 IN LINE 65 OF Task06.c: syntax error near ''0'', expected 'bit'
+*** ERROR C231 IN LINE 65 OF Task06.c: '_writedata': redefinition
+C51 COMPILER V9.60.0.0   TASK06                                                            08/18/2022 20:25:17 PAGE 3   
+
+  66            writedata('6');
+*** ERROR C141 IN LINE 66 OF Task06.c: syntax error near ''6'', expected 'bit'
+*** ERROR C231 IN LINE 66 OF Task06.c: '_writedata': redefinition
+  67            writecmd(0x80);   //force cursor to the begining of first line.
+*** ERROR C141 IN LINE 67 OF Task06.c: syntax error near '0x80', expected 'bit'
+*** ERROR C231 IN LINE 67 OF Task06.c: '_writecmd': redefinition
+  68            
+  69            while(1)
+*** ERROR C141 IN LINE 69 OF Task06.c: syntax error near 'while', expected 'hdata'
+*** ERROR C141 IN LINE 69 OF Task06.c: syntax error near '1', expected 'hdata'
+  70            {
+  71              key=get_key();
+*** ERROR C231 IN LINE 71 OF Task06.c: 'key': redefinition
+  72              if(key=='C')
+*** ERROR C141 IN LINE 72 OF Task06.c: syntax error near 'if', expected 'hdata'
+*** ERROR C141 IN LINE 72 OF Task06.c: syntax error near '==', expected ')'
+  73              {
+  74                writecmd(0x01);
+*** ERROR C141 IN LINE 74 OF Task06.c: syntax error near '0x01', expected 'bit'
+*** ERROR C231 IN LINE 74 OF Task06.c: '_writecmd': redefinition
+  75                arr[0]=arr[1]=arr[2]='n';
+*** ERROR C136 IN LINE 75 OF Task06.c: invalid dimension size: [0]
+*** ERROR C231 IN LINE 75 OF Task06.c: 'arr': redefinition
+*** ERROR C247 IN LINE 75 OF Task06.c: non-address/-constant initializer
+  76                int_result=0;
+*** ERROR C231 IN LINE 76 OF Task06.c: 'int_result': redefinition
+  77                index=0;
+*** ERROR C279 IN LINE 77 OF Task06.c: 'index': multiple initialization
+*** ERROR C231 IN LINE 77 OF Task06.c: 'index': redefinition
+  78              }
+*** ERROR C141 IN LINE 78 OF Task06.c: syntax error near '}', expected 'hdata'
+  79              else if(key=='=')
+*** ERROR C141 IN LINE 79 OF Task06.c: syntax error near '==', expected ')'
+  80              {
+  81                writedata('=');
+*** ERROR C141 IN LINE 81 OF Task06.c: syntax error near ''='', expected 'bit'
+*** ERROR C231 IN LINE 81 OF Task06.c: '_writedata': redefinition
+  82                if(arr[1]=='+')
+*** ERROR C141 IN LINE 82 OF Task06.c: syntax error near 'if', expected 'hdata'
+*** ERROR C141 IN LINE 82 OF Task06.c: syntax error near '==', expected ')'
+  83                {
+  84                  int_result=(arr[0]-'0')+(arr[2]-'0');   //-'0' mean converting char to int.
+*** ERROR C279 IN LINE 84 OF Task06.c: 'int_result': multiple initialization
+  85                }
+*** ERROR C141 IN LINE 85 OF Task06.c: syntax error near '}', expected 'hdata'
+  86                else if(arr[1]=='-')
+*** ERROR C141 IN LINE 86 OF Task06.c: syntax error near '==', expected ')'
+  87                {
+  88                  int_result=(arr[0]-'0')-(arr[2]-'0');
+*** ERROR C279 IN LINE 88 OF Task06.c: 'int_result': multiple initialization
+  89                }
+*** ERROR C141 IN LINE 89 OF Task06.c: syntax error near '}', expected 'hdata'
+  90                else if(arr[1]=='x')
+*** ERROR C141 IN LINE 90 OF Task06.c: syntax error near '==', expected ')'
+  91                {
+  92                  int_result=(arr[0]-'0')*(arr[2]-'0');
+*** ERROR C279 IN LINE 92 OF Task06.c: 'int_result': multiple initialization
+  93                }
+*** ERROR C141 IN LINE 93 OF Task06.c: syntax error near '}', expected 'hdata'
+  94                else if(arr[1]=='/')
+*** ERROR C141 IN LINE 94 OF Task06.c: syntax error near '==', expected ')'
+  95                {
+C51 COMPILER V9.60.0.0   TASK06                                                            08/18/2022 20:25:17 PAGE 4   
+
+  96                  int_result=(arr[0]-'0')/(arr[2]-'0');
+*** ERROR C279 IN LINE 96 OF Task06.c: 'int_result': multiple initialization
+  97                }
+*** ERROR C141 IN LINE 97 OF Task06.c: syntax error near '}', expected 'hdata'
+  98                
+  99                if(int_result>9)
+*** ERROR C141 IN LINE 99 OF Task06.c: syntax error near '>', expected ')'
+ 100                {
+ 101                  int arr1[2];
+ 102                  arr1[0]=int_result%10;
+*** ERROR C136 IN LINE 102 OF Task06.c: invalid dimension size: [0]
+*** ERROR C231 IN LINE 102 OF Task06.c: 'arr1': redefinition
+*** ERROR C247 IN LINE 102 OF Task06.c: non-address/-constant initializer
+ 103                  arr1[1]=int_result/10;
+*** ERROR C279 IN LINE 103 OF Task06.c: 'arr1': multiple initialization
+*** ERROR C247 IN LINE 103 OF Task06.c: non-address/-constant initializer
+ 104                  
+ 105                  char_result=arr1[1]+'0';  //+'0' mean converting int to char.
+*** ERROR C231 IN LINE 105 OF Task06.c: 'char_result': redefinition
+ 106                  writedata(char_result);
+*** ERROR C231 IN LINE 106 OF Task06.c: '_writedata': redefinition
+ 107                  
+ 108                  char_result=arr1[0]+'0';
+*** ERROR C279 IN LINE 108 OF Task06.c: 'char_result': multiple initialization
+ 109                  writedata(char_result);
+*** ERROR C231 IN LINE 109 OF Task06.c: '_writedata': redefinition
+ 110                }
+*** ERROR C141 IN LINE 110 OF Task06.c: syntax error near '}', expected 'hdata'
+ 111                else
+ 112                {
+ 113                  char_result=int_result+'0';  
+*** ERROR C279 IN LINE 113 OF Task06.c: 'char_result': multiple initialization
+*** ERROR C247 IN LINE 113 OF Task06.c: non-address/-constant initializer
+ 114                  writedata(char_result);
+*** ERROR C231 IN LINE 114 OF Task06.c: '_writedata': redefinition
+ 115                }
+*** ERROR C141 IN LINE 115 OF Task06.c: syntax error near '}', expected 'hdata'
+ 116              }
+ 117              else
+ 118                writedata(key);
+*** ERROR C231 IN LINE 118 OF Task06.c: '_writedata': redefinition
+ 119            }
+*** ERROR C141 IN LINE 119 OF Task06.c: syntax error near '}', expected 'hdata'
+ 120          }
+ 121          
+ 122          void delay(unsigned int x)
+ 123          {
+ 124   1        int i;
+ 125   1        for(i=0; i<x; i++); 
+ 126   1      }
+ 127          
+ 128          void writecmd(int c)
+ 129          {
+ 130   1        RS=0;
+ 131   1        P2=c;
+ 132   1        E=1;
+ 133   1        delay(150);
+ 134   1        E=0;
+ 135   1        delay(150);
+ 136   1      }
+ 137          
+ 138          void writedata(char d)
+C51 COMPILER V9.60.0.0   TASK06                                                            08/18/2022 20:25:17 PAGE 5   
+
+ 139          {
+ 140   1        RS=1;
+ 141   1        P2=d;
+ 142   1        E=1;
+ 143   1        delay(150);
+ 144   1        E=0;
+ 145   1        delay(150);
+ 146   1      }
+ 147          
+ 148          void lcd_init()
+ 149          {
+ 150   1        delay(15000);
+ 151   1        writecmd(0x30);
+ 152   1        delay(4500);
+ 153   1        writecmd(0x30);
+ 154   1        delay(300);
+ 155   1        writecmd(0x30);
+ 156   1        delay(650);
+ 157   1        writecmd(0x38);
+ 158   1        writecmd(0x0C);
+ 159   1        writecmd(0x01);
+ 160   1        writecmd(0x06);
+ 161   1      }
+ 162          void Ports_init()
+ 163          {
+ 164   1        P2=0x00;    //Data lines
+ 165   1        P1=0xF0;   //make columns as input and rows as output.
+ 166   1        E=0;
+ 167   1        RS=0;
+ 168   1      }
+ 169          float read_keypad()
+ 170          {
+ 171   1        RA=0; RB=1; RC=1; RX=1;
+ 172   1        if(C1==0){delay(10000); while(C1==0); return 7;}
+ 173   1        if(C2==0){delay(10000); while(C2==0); return 8;}
+ 174   1        if(C3==0){delay(10000); while(C3==0); return 9;}
+ 175   1        if(C4==0){delay(10000); while(C4==0); return optr[3];}
+ 176   1        
+ 177   1        RA=1; RB=0; RC=1; RX=1;
+ 178   1        if(C1==0){delay(10000); while(C1==0); return 4;}
+ 179   1        if(C2==0){delay(10000); while(C2==0); return 5;}
+ 180   1        if(C3==0){delay(10000); while(C3==0); return 6;}
+ 181   1        if(C4==0){delay(10000); while(C4==0); return optr[2];}
+ 182   1        
+ 183   1        RA=1; RB=1; RC=0; RX=1;
+ 184   1        if(C1==0){delay(10000); while(C1==0); return 1;}
+ 185   1        if(C2==0){delay(10000); while(C2==0); return 2;}
+ 186   1        if(C3==0){delay(10000); while(C3==0); return 3;}
+ 187   1        if(C4==0){delay(10000); while(C4==0); return optr[1];}
+ 188   1        
+ 189   1        RA=1; RB=1; RC=1; RX=0;
+ 190   1        if(C1==0){delay(10000); while(C1==0); return atoi('C');}
+ 191   1        if(C2==0){delay(10000); while(C2==0); return 0;}
+ 192   1        if(C3==0){delay(10000); while(C3==0); return optr[4];}
+ 193   1        if(C4==0){delay(10000); while(C4==0); return optr[0];}
+ 194   1      
+ 195   1        return 1;
+ 196   1      }
+ 197          
+ 198          float get_key()
+ 199          {
+ 200   1        float key=1;
+C51 COMPILER V9.60.0.0   TASK06                                                            08/18/2022 20:25:17 PAGE 6   
+
+ 201   1        while(key==1)
+ 202   1        {
+ 203   2          key=read_keypad();
+ 204   2        }
+ 205   1        while (key != optr[0] && optr[1] && optr[2] && optr[3])
+ 206   1        {
+ 207   2          writedata1(read_keypad());
+ 208   2       
+ 209   2        return key;
+ 210   2      }
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  102 ERROR(S)

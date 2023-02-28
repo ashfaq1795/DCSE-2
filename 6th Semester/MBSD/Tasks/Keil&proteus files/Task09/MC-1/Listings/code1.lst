@@ -1,0 +1,58 @@
+C51 COMPILER V9.60.0.0   CODE1                                                             07/25/2022 11:17:41 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE CODE1
+OBJECT MODULE PLACED IN .\Objects\code1.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE code1.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\cod
+                    -e1.lst) TABS(2) OBJECT(.\Objects\code1.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          #include<stdio.h>
+   3          #define input P1;
+   4          doubleDG_signal;
+   5          // ADC pins
+   6          sbit Read = P3 ^3;  // rd pin will use for reading
+   7          sbit Write = P3 ^4; // wr pin will use for writing
+   8          sbit INTR = P3 ^2;  // intr is used for interrupt
+   9          void Analogue_to_digital()
+  10          {
+  11   1          Read =1;  // high to low to read from adc
+  12   1          Write =0; // low to high to write on adc
+  13   1          // delay(1);
+  14   1          Write =1;
+  15   1          while (INTR ==1)
+  16   1              ; // low active interrupt
+  17   1          Read =0;
+  18   1      }
+  19          voidmain(void)   //microcontroller configuration
+  20          {
+  21   1          TMOD =0x20; // Auto Reload Mode of Timer1
+  22   1          TH1 =0xFD;
+  23   1          SCON =0x50;   //SM1=1 REN=1;
+  24   1          PCON =0x00;    //bps not twice
+  25   1          TR1 =1; // Set TImer1
+  26   1          while (1)
+  27   1          {
+  28   2              Analogue_to_digital();
+  29   2              SBUF =input; // reg for serial communication
+  30   2              while (TI ==0)
+  31   2                  ; /// when the transmission done the T1==0
+  32   2              TI =0;
+  33   2          }
+  34   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     39    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

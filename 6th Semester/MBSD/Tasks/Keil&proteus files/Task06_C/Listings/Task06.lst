@@ -1,0 +1,238 @@
+C51 COMPILER V9.60.0.0   TASK06                                                            08/18/2022 20:35:53 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TASK06
+OBJECT MODULE PLACED IN .\Objects\Task06.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Task06.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\Ta
+                    -sk06.lst) TABS(2) OBJECT(.\Objects\Task06.obj)
+
+line level    source
+
+   1          //it will take only one digit before and after operator
+   2          
+   3          #include <reg51.h>
+   4          #include <stdio.h>
+   5          
+   6          //Functions 7
+   7          void Ports_init();
+   8          void lcd_init();
+   9          void delay(int);
+  10          void writedata(char);
+  11          void writecmd(int);
+  12          char read_keypad();
+  13          char get_key();
+  14            
+  15          //pins names
+  16          sbit RA=P1^0;   //rows
+  17          sbit RB=P1^1;
+  18          sbit RC=P1^2;
+  19          sbit RX=P1^3;     //i can't write RD b/c i think it's a keyword.
+  20          
+  21          sbit C1=P1^4;  //coloumns
+  22          sbit C2=P1^5;
+  23          sbit C3=P1^6;
+  24          sbit C4=P1^7;
+  25          
+  26          sbit RS=P3^0;  //control pins..
+  27          sbit E=P3^1;
+  28          
+  29            
+  30          //veriables
+  31          unsigned int index=0,int_result;
+  32          char arr[3],char_result;  
+  33          
+  34          //main function
+  35          void main()
+  36          {
+  37   1        char key;
+  38   1        lcd_init();
+  39   1        Ports_init();
+  40   1        
+  41   1        
+  42   1        writecmd(0x94);   //Sets cursor to line 3 of display
+  43   1        writedata('A');
+  44   1        writedata('S');
+  45   1        writedata('H');
+  46   1        writedata('F');
+  47   1        writedata('A');
+  48   1        writedata('Q');
+  49   1        writedata(' ');
+  50   1        writedata('A');
+  51   1        writedata('H');
+  52   1        writedata('M');
+  53   1        writedata('A');
+  54   1        writedata('D');
+C51 COMPILER V9.60.0.0   TASK06                                                            08/18/2022 20:35:53 PAGE 2   
+
+  55   1        writecmd(0xD4);    //Sets cursor to line 4 of display
+  56   1        writedata('M');
+  57   1        writedata('B');
+  58   1        writedata('S');
+  59   1        writedata('D');
+  60   1        writedata(' ');
+  61   1        writedata('T');
+  62   1        writedata('A');
+  63   1        writedata('S');
+  64   1        writedata('K');
+  65   1        writedata('0');
+  66   1        writedata('6');
+  67   1        writecmd(0x80);   //force cursor to the begining of first line.
+  68   1        
+  69   1        while(1)
+  70   1        {
+  71   2          key=get_key();
+  72   2          if(key=='C')
+  73   2          {
+  74   3            writecmd(0x01);
+  75   3            arr[0]=arr[1]=arr[2]='n';
+  76   3            int_result=0;
+  77   3            index=0;
+  78   3          }
+  79   2          else if(key=='=')
+  80   2          {
+  81   3            writedata('=');
+  82   3            if(arr[1]=='+')
+  83   3            {
+  84   4              int_result=(arr[0]-'0')+(arr[2]-'0');   //-'0' mean converting char to int.
+  85   4            }
+  86   3            else if(arr[1]=='-')
+  87   3            {
+  88   4              int_result=(arr[0]-'0')-(arr[2]-'0');
+  89   4            }
+  90   3            else if(arr[1]=='x')
+  91   3            {
+  92   4              int_result=(arr[0]-'0')*(arr[2]-'0');
+  93   4            }
+  94   3            else if(arr[1]=='/')
+  95   3            {
+  96   4              int_result=(arr[0]-'0')/(arr[2]-'0');
+  97   4            }
+  98   3            
+  99   3            if(int_result>9)
+ 100   3            {
+ 101   4              int arr1[2];
+ 102   4              arr1[0]=int_result%10;
+ 103   4              arr1[1]=int_result/10;
+ 104   4              
+ 105   4              char_result=arr1[1]+'0';  //+'0' mean converting int to char.
+ 106   4              writedata(char_result);
+ 107   4              
+ 108   4              char_result=arr1[0]+'0';
+ 109   4              writedata(char_result);
+ 110   4            }
+ 111   3            else
+ 112   3            {
+ 113   4              char_result=int_result+'0';  
+ 114   4              writedata(char_result);
+ 115   4            }
+ 116   3          }
+C51 COMPILER V9.60.0.0   TASK06                                                            08/18/2022 20:35:53 PAGE 3   
+
+ 117   2          else
+ 118   2            writedata(key);
+ 119   2        }
+ 120   1      }
+ 121          
+ 122          void delay(unsigned int x)
+ 123          {
+*** WARNING C235 IN LINE 123 OF Task06.c: parameter 1: different types
+ 124   1        int i;
+ 125   1        for(i=0; i<x; i++); 
+ 126   1      }
+ 127          
+ 128          void writecmd(int c)
+ 129          {
+ 130   1        RS=0;
+ 131   1        P2=c;
+ 132   1        E=1;
+ 133   1        delay(150);
+ 134   1        E=0;
+ 135   1        delay(150);
+ 136   1      }
+ 137          
+ 138          void writedata(char d)
+ 139          {
+ 140   1        RS=1;
+ 141   1        P2=d;
+ 142   1        E=1;
+ 143   1        delay(150);
+ 144   1        E=0;
+ 145   1        delay(150);
+ 146   1      }
+ 147          
+ 148          void lcd_init()
+ 149          {
+ 150   1        delay(15000);
+ 151   1        writecmd(0x30);
+ 152   1        delay(4500);
+ 153   1        writecmd(0x30);
+ 154   1        delay(300);
+ 155   1        writecmd(0x30);
+ 156   1        delay(650);
+ 157   1        writecmd(0x38);
+ 158   1        writecmd(0x0C);
+ 159   1        writecmd(0x01);
+ 160   1        writecmd(0x06);
+ 161   1      }
+ 162          void Ports_init()   //this function don't need. if we skip it still it will work.
+ 163          {
+ 164   1        P2=0x00;    //Data lines
+ 165   1        P1=0xF0;   //make columns as input and rows as output.
+ 166   1        E=0;      //initially 0. if we wanna latch command or data we will make it 1 and then 0. data will latch.
+ 167   1        RS=0;     //command register when 0 and data register when 1
+ 168   1      }
+ 169          char read_keypad()
+ 170          {
+ 171   1        RA=0; RB=1; RC=1; RX=1;
+ 172   1        if(C1==0){delay(10000); while(C1==0); return '7';}
+ 173   1        if(C2==0){delay(10000); while(C2==0); return '8';}
+ 174   1        if(C3==0){delay(10000); while(C3==0); return '9';}
+ 175   1        if(C4==0){delay(10000); while(C4==0); return '/';}
+ 176   1        
+ 177   1        RA=1; RB=0; RC=1; RX=1;
+C51 COMPILER V9.60.0.0   TASK06                                                            08/18/2022 20:35:53 PAGE 4   
+
+ 178   1        if(C1==0){delay(10000); while(C1==0); return '4';}
+ 179   1        if(C2==0){delay(10000); while(C2==0); return '5';}
+ 180   1        if(C3==0){delay(10000); while(C3==0); return '6';}
+ 181   1        if(C4==0){delay(10000); while(C4==0); return 'x';}
+ 182   1        
+ 183   1        RA=1; RB=1; RC=0; RX=1;
+ 184   1        if(C1==0){delay(10000); while(C1==0); return '1';}
+ 185   1        if(C2==0){delay(10000); while(C2==0); return '2';}
+ 186   1        if(C3==0){delay(10000); while(C3==0); return '3';}
+ 187   1        if(C4==0){delay(10000); while(C4==0); return '-';}
+ 188   1        
+ 189   1        RA=1; RB=1; RC=1; RX=0;
+ 190   1        if(C1==0){delay(10000); while(C1==0); return 'C';}
+ 191   1        if(C2==0){delay(10000); while(C2==0); return '0';}
+ 192   1        if(C3==0){delay(10000); while(C3==0); return '=';}
+ 193   1        if(C4==0){delay(10000); while(C4==0); return '+';}
+ 194   1        
+ 195   1        return 'n';
+ 196   1      }
+ 197          
+ 198          char get_key()
+ 199          {
+ 200   1        char key='n';
+ 201   1        while(key=='n')
+ 202   1        {
+ 203   2          key=read_keypad();
+ 204   2        }
+ 205   1        arr[index++]=key;   //post increment.
+ 206   1        return key;
+ 207   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    830    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      8       5
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

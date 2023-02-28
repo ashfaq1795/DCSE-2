@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\code.obj" 
+TO ".\Objects\timer1_as_counter_mode_1" 
+PRINT(".\Listings\timer1_as_counter_mode_1.m51")

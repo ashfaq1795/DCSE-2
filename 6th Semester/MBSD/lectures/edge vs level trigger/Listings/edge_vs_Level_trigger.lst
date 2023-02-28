@@ -1,0 +1,51 @@
+C51 COMPILER V9.60.0.0   EDGE_VS_LEVEL_TRIGGER                                             08/10/2022 21:52:07 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE EDGE_VS_LEVEL_TRIGGER
+OBJECT MODULE PLACED IN .\Objects\edge_vs_Level_trigger.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE edge_vs_Level_trigger.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRIN
+                    -T(.\Listings\edge_vs_Level_trigger.lst) TABS(2) OBJECT(.\Objects\edge_vs_Level_trigger.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <stdio.h>
+   3          
+   4          unsigned int count=0;
+   5          void intp0() interrupt 1
+   6          {
+   7   1           count++;
+   8   1      }
+   9          void intp1() interrupt 2
+  10          {
+  11   1          count--;
+  12   1      }
+  13          
+  14          
+  15          void main(void)
+  16           { 
+  17   1         P3 |=0x0c; //set Pin 2 and 3 as input. if we don't set these pin as input, still it will work. 
+  18   1         EX0=1;   //enable external interrupt 0
+  19   1         EX1=1;   //enable external interrupt 1
+  20   1         EA=1;    //enable all interrupts.
+  21   1         IT0=1;   //set interrupt 0 as edge trigger 
+  22   1         IT1=0;   //set interrupt 1 as a level trigger.
+  23   1         while (1)
+  24   1            {
+  25   2                P1=count;
+  26   2             }
+  27   1       }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     44    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

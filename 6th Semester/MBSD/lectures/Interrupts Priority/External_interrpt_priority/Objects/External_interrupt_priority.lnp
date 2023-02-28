@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\external_interrupt_priority.obj" 
+TO ".\Objects\External_interrupt_priority" 
+PRINT(".\Listings\External_interrupt_priority.m51")

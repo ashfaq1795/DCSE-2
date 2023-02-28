@@ -1,0 +1,57 @@
+C51 COMPILER V9.60.0.0   EXTERNAL_INTERRUPT_PRIORITY                                       08/12/2022 12:29:39 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE EXTERNAL_INTERRUPT_PRIORITY
+OBJECT MODULE PLACED IN .\Objects\external_interrupt_priority.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE external_interrupt_priority.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEN
+                    -D PRINT(.\Listings\external_interrupt_priority.lst) TABS(2) OBJECT(.\Objects\external_interrupt_priority.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <stdio.h>
+   3          
+   4          unsigned int count=0;  
+   5          
+   6          void intp0() interrupt 0   //Low priority ISR
+   7          { 
+   8   1          count--;
+   9   1      }
+  10          
+  11          void intp1() interrupt 2  //high priority ISR
+  12          {
+  13   1          count++;
+  14   1      }
+  15          
+  16          void main()
+  17          {
+  18   1        /////////////IE////////////////
+  19   1        EA=1;
+  20   1        EX0=1;
+  21   1        EX1=1;
+  22   1        /////////////TCON/////////////
+  23   1        IT0=1;   //both edge trigger.
+  24   1        IT1=1;
+  25   1        /////////////IP///////////////
+  26   1        PX0=0;
+  27   1        PX1=1;   //higher priority which is opposite to defualt priority.
+  28   1        
+  29   1        while(1)
+  30   1        {
+  31   2          P1=count;
+  32   2        }
+  33   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     45    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

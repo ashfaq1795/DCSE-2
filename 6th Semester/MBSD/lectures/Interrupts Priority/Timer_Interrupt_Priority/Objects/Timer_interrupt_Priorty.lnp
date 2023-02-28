@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\timer_interrupt_priority.obj" 
+TO ".\Objects\Timer_interrupt_Priorty" 
+PRINT(".\Listings\Timer_interrupt_Priorty.m51")

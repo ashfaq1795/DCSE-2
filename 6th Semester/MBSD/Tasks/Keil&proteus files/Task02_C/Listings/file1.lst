@@ -1,0 +1,57 @@
+C51 COMPILER V9.60.0.0   FILE1                                                             05/11/2022 09:55:13 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE FILE1
+OBJECT MODULE PLACED IN .\Objects\file1.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE file1.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\fil
+                    -e1.lst) TABS(2) OBJECT(.\Objects\file1.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <stdio.h>
+   3          
+   4          sbit pin=P1^2;
+   5          sbit button=P1^1;
+   6            
+   7            void mysig(unsigned int msec)
+   8            {
+   9   1             unsigned int j,k;
+  10   1          for( j=0; j<msec; j++)
+  11   1           {
+  12   2          for( k=0; k<125; k ++);  //create 1msec delay when frequency of MC is 12MH.
+  13   2           }
+  14   1          
+  15   1        }
+  16          void  main()
+  17             { 
+  18   1      while(1)
+  19   1          { 
+  20   2          if(button)
+  21   2            {
+  22   3            pin=1;
+  23   3            mysig(2);
+  24   3            pin=0;
+  25   3            mysig(2);
+  26   3           }
+  27   2          else
+  28   2             pin=1;
+  29   2             mysig(6);
+  30   2             pin=0;
+  31   2             mysig(4);
+  32   2         }
+  33   1       }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     69    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

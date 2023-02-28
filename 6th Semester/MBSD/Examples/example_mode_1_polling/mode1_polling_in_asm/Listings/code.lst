@@ -1,0 +1,55 @@
+A51 MACRO ASSEMBLER  CODE                                                                 07/17/2022 00:37:31 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\code.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE code.a51 SET(SMALL) DEBUG PRINT(.\Listings\code.lst) OBJECT(.\Objects\c
+                      ode.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ;generate a square wave at P1.5 having pulse time period 200 us using timer mode 1. the osc
+                             illator clock frequency is 12Mhz.
+                       2     
+                       3     
+                       4     
+                       5     ;external oscillator=12Mhz,   clock frequency=1Mhz, clock Time period=1us
+                       6     ;so for 200us=200us/1us=200 clock cycle require for 200us delay.
+                       7     
+0000                   8      org 0
+0000 758901            9      mov TMOD,#01    ;mode 1 timer 0
+0003 D28C             10      setb TR0
+0005                  11      start:
+0005 758CFF           12      mov TH0,#0FFh         ;2 machine cycle
+0008 758A40           13      mov TL0,#40h          ;2 machine cycle
+000B 308DFD           14      loop: jnb TF0,loop    ;192 machine cycle  (191 clock cycle + 1 roll over cycle).
+000E B295             15      cpl P1.5              ;1 machine cycle
+0010 C28D             16      clr TF0               ;1 Machine cycle
+0012 80F1             17      sjmp start            ;2 machine cycle
+                      18      end
+                               
+                              ;we will put FFFF-191=FF40 so that total clock cycle equal to 200 and it will give 200 us 
+                             delay.
+                              ;this is not whole program execution time. it is just delay duration of wave.
+A51 MACRO ASSEMBLER  CODE                                                                 07/17/2022 00:37:31 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+LOOP . . . . . . .  C ADDR   000BH   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+START. . . . . . .  C ADDR   0005H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

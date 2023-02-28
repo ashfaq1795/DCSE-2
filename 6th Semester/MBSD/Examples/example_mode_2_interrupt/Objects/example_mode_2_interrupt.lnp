@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\code.obj" 
+TO ".\Objects\example_mode_2_interrupt" 
+PRINT(".\Listings\example_mode_2_interrupt.m51")

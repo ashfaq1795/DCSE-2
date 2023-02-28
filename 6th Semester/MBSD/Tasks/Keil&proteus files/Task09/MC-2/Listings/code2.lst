@@ -1,0 +1,42 @@
+C51 COMPILER V9.60.0.0   CODE2                                                             07/25/2022 11:07:37 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE CODE2
+OBJECT MODULE PLACED IN .\Objects\code2.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE code2.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\cod
+                    -e2.lst) TABS(2) OBJECT(.\Objects\code2.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          #include<stdio.h>
+   3          unsigned int y;
+   4          void main(void)
+   5          {
+   6   1          TMOD =0x20;
+   7   1          TH1 =0xFD; // bps 9600
+   8   1          SCON =0x50;
+   9   1          PCON =0x00;
+  10   1          TR1 =1;
+  11   1          while (1)
+  12   1          {
+  13   2              while (RI ==0)
+  14   2                  ; // Stays here until the Data is received
+  15   2              RI =0;
+  16   2              P1 = SBUF; // Throws the output data to P1
+  17   2          }
+  18   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     24    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
