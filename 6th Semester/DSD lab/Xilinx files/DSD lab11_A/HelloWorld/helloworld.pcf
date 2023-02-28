@@ -1,0 +1,14 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Mon Jul 04 13:47:19 2022
+//! **************************************************************************
+
+SCHEMATIC START;
+NET
+        "mcs_0/U0/microblaze_I/MicroBlaze_Core_I/Area.Data_Flow_I/PC_Module_I/Using_FPGA.pc_write_I"
+        USELOWSKEWLINES;
+COMP "UART_Rx" LOCATE = SITE "A8" LEVEL 1;
+COMP "UART_Tx" LOCATE = SITE "B8" LEVEL 1;
+COMP "Clk" LOCATE = SITE "V10" LEVEL 1;
+NET "Clk_BUFGP/IBUFG" PERIOD = 10 ns HIGH 50%;
+SCHEMATIC END;
+

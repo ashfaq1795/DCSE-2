@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\AshfaqAhmad\Documents\DSD_lab_exam_2022\DSD_labexam\parking_sys.ncd
+OUTFILE=C:\Users\AshfaqAhmad\Documents\DSD_lab_exam_2022\DSD_labexam\parking_sys.bit
+FAMILY=Spartan6
+PART=xc6slx9-2csg324
+WORKINGDIR=C:\Users\AshfaqAhmad\Documents\DSD_lab_exam_2022\DSD_labexam
+LICENSE=WebPack
+USER_INFO=__0_0_0

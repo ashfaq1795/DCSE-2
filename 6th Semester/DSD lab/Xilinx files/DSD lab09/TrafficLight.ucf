@@ -1,0 +1,18 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "farm[2]" LOC = P15;
+NET "farm[1]" LOC = P16;
+NET "farm[0]" LOC = N15;
+NET "highway[2]" LOC = U18;
+NET "highway[1]" LOC = T17;
+NET "highway[0]" LOC = T18;
+NET "v" LOC = F17;
+NET "rst" LOC = C17;
+NET "clk" LOC = V10;
+
+# PlanAhead Generated IO constraints 
+
+NET "clk" PULLUP;
+NET "rst" PULLUP;
+NET "v" PULLUP;

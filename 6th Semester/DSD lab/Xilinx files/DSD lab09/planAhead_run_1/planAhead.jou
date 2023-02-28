@@ -1,0 +1,45 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Wed Jul 27 01:27:30 2022
+# Process ID: 11664
+# Log file: C:/Users/AshfaqAhmad/Documents/practice/DSDlab09/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/AshfaqAhmad/Documents/practice/DSDlab09/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source C:/Users/AshfaqAhmad/Documents/practice/DSDlab09/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin P15 [get_ports {farm[2]}]
+endgroup
+startgroup
+set_property package_pin P16 [get_ports {farm[1]}]
+endgroup
+startgroup
+set_property package_pin N15 [get_ports {farm[0]}]
+endgroup
+startgroup
+set_property package_pin U18 [get_ports {highway[2]}]
+endgroup
+startgroup
+set_property package_pin T17 [get_ports {highway[1]}]
+endgroup
+startgroup
+set_property package_pin T18 [get_ports {highway[0]}]
+endgroup
+startgroup
+set_property package_pin C17 [get_ports v]
+endgroup
+startgroup
+set_property package_pin F17 [get_ports v]
+endgroup
+startgroup
+set_property package_pin C17 [get_ports rst]
+endgroup
+startgroup
+set_property package_pin V10 [get_ports clk]
+endgroup
+set_property pulltype PULLUP [get_ports [list clk]]
+set_property pulltype PULLUP [get_ports [list rst]]
+set_property pulltype PULLUP [get_ports [list v]]
+save_constraints

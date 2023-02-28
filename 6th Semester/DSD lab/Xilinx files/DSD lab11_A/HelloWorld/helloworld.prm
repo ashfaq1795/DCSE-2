@@ -1,0 +1,14 @@
+PROMGEN: Xilinx Prom Generator P.20131013
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+promgen -w -p bin -u 0x0 helloworld.bit -spi -o helloworld 
+
+PROM helloworld.prm map: Mon Jul 04 13:48:24 2022
+
+Format        Bin
+Size          512K
+PROM start    00000000
+PROM end      0007ffff
+
+        Addr1        Addr2                     Date File(s)
+     00000000     0005327b     Jul 04 13:48:12 2022 helloworld.bit

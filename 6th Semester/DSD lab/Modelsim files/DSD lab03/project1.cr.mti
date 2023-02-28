@@ -1,0 +1,23 @@
+{C:/Users/AshfaqAhmad/Documents/DSD lab03/filea3.v} {1 {vlog -work work {C:/Users/AshfaqAhmad/Documents/DSD lab03/filea3.v}
+Model Technology ModelSim SE vlog 5.7f Compiler 2003.09 Sep 15 2003
+-- Compiling module buffer_8bits
+-- Compiling module test_bench4
+
+Top level modules:
+	test_bench4
+
+} {} {}} {C:/Users/AshfaqAhmad/Documents/DSD lab03/filea1.v} {1 {vlog -work work {C:/Users/AshfaqAhmad/Documents/DSD lab03/filea1.v}
+Model Technology ModelSim SE vlog 5.7f Compiler 2003.09 Sep 15 2003
+-- Compiling module buffer
+
+Top level modules:
+	buffer
+
+} {} {}} {C:/Users/AshfaqAhmad/Documents/DSD lab03/filea2.v} {1 {vlog -work work {C:/Users/AshfaqAhmad/Documents/DSD lab03/filea2.v}
+Model Technology ModelSim SE vlog 5.7f Compiler 2003.09 Sep 15 2003
+-- Compiling module test_bench1
+
+Top level modules:
+	test_bench1
+
+} {} {}}

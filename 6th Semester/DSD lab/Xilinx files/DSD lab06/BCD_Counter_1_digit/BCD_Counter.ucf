@@ -1,0 +1,23 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "seg[0]" LOC = A3;
+NET "seg[1]" LOC = B4;
+NET "seg[2]" LOC = A4;
+NET "seg[3]" LOC = C4;
+NET "seg[4]" LOC = C5;
+NET "seg[5]" LOC = D6;
+NET "seg[6]" LOC = C6;
+NET "en[0]" LOC = B2;
+NET "en[1]" LOC = A2;
+NET "en[2]" LOC = B3;
+NET "clk" LOC = V10;
+
+# PlanAhead Generated IO constraints 
+
+NET "clk" PULLUP;
+NET "reset" PULLUP;
+
+# PlanAhead Generated physical constraints 
+
+NET "reset" LOC = F17;

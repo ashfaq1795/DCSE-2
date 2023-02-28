@@ -1,0 +1,137 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Wed Jul 27 11:29:35 2022
+# Process ID: 9384
+# Log file: C:/Users/AshfaqAhmad/Documents/DSD_lab_exam_2022/DSD_labexam/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/AshfaqAhmad/Documents/DSD_lab_exam_2022/DSD_labexam/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [D:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source C:/Users/AshfaqAhmad/Documents/DSD_lab_exam_2022/DSD_labexam/pa.fromNetlist.tcl
+# create_project -name DSD_labexam -dir "C:/Users/AshfaqAhmad/Documents/DSD_lab_exam_2022/DSD_labexam/planAhead_run_1" -part xc6slx9csg324-2
+create_project: Time (s): elapsed = 00:00:05 . Memory (MB): peak = 485.352 ; gain = 66.066
+# set_property design_mode GateLvl [get_property srcset [current_run -impl]]
+# set_property edif_top_file "C:/Users/AshfaqAhmad/Documents/DSD_lab_exam_2022/DSD_labexam/parking_sys.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {C:/Users/AshfaqAhmad/Documents/DSD_lab_exam_2022/DSD_labexam} }
+# set_param project.pinAheadLayout  yes
+# set_property target_constrs_file "parking_sys.ucf" [current_fileset -constrset]
+Adding file 'C:/Users/AshfaqAhmad/Documents/DSD_lab_exam_2022/DSD_labexam/parking_sys.ucf' to fileset 'constrs_1'
+# add_files [list {parking_sys.ucf}] -fileset [get_property constrset [current_run]]
+# link_design
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+Design is defaulting to project part: xc6slx9csg324-2
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design parking_sys.ngc ...
+WARNING:NetListWriters:298 - No output is written to parking_sys.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus cd/c[31]_GND_2_o_mux_3_OUT<23 : 7> on
+   block parking_sys is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file parking_sys.edif ...
+ngc2edif: Total memory usage is 4310432 kilobytes
+
+Parsing EDIF File [./planAhead_run_1/DSD_labexam.data/cache/parking_sys_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_1/DSD_labexam.data/cache/parking_sys_ngc_zx.edif]
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Loading clock regions from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockRegion.xml
+Loading clock buffers from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockBuffers.xml
+Loading package pin functions from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/PinFunctions.xml...
+Loading package from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/csg324/Package.xml
+Loading io standards from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/IOStandards.xml
+Loading device configuration modes from D:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/ConfigModes.xml
+Loading list of drcs for the architecture : D:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/drc.xml
+Parsing UCF File [C:/Users/AshfaqAhmad/Documents/DSD_lab_exam_2022/DSD_labexam/parking_sys.ucf]
+Finished Parsing UCF File [C:/Users/AshfaqAhmad/Documents/DSD_lab_exam_2022/DSD_labexam/parking_sys.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  BUFGP => BUFGP (IBUF, BUFG): 1 instances
+
+Phase 0 | Netlist Checksum: 76ec1830
+link_design: Time (s): elapsed = 00:00:19 . Memory (MB): peak = 661.949 ; gain = 172.855
+startgroup
+set_property package_pin B2 [get_ports {enable[0]}]
+endgroup
+startgroup
+set_property package_pin A2 [get_ports {enable[1]}]
+endgroup
+startgroup
+set_property package_pin B3 [get_ports {enable[2]}]
+endgroup
+startgroup
+set_property package_pin A3 [get_ports {seg7[0]}]
+endgroup
+startgroup
+set_property package_pin B4 [get_ports {seg7[1]}]
+endgroup
+startgroup
+set_property package_pin A4 [get_ports {seg7[1]}]
+endgroup
+startgroup
+set_property package_pin B4 [get_ports {seg7[1]}]
+endgroup
+startgroup
+set_property package_pin A4 [get_ports {seg7[2]}]
+endgroup
+startgroup
+set_property package_pin C4 [get_ports {seg7[3]}]
+endgroup
+startgroup
+set_property package_pin C5 [get_ports {seg7[4]}]
+endgroup
+startgroup
+set_property package_pin D6 [get_ports {seg7[5]}]
+endgroup
+startgroup
+set_property package_pin C6 [get_ports {seg7[6]}]
+endgroup
+startgroup
+set_property package_pin P15 [get_ports bulb]
+endgroup
+startgroup
+set_property package_pin V10 [get_ports clk_100Mhz]
+endgroup
+startgroup
+set_property package_pin P16 [get_ports gate]
+endgroup
+startgroup
+set_property package_pin F17 [get_ports one]
+endgroup
+startgroup
+set_property package_pin C17 [get_ports reset]
+endgroup
+startgroup
+set_property package_pin C18 [get_ports v]
+endgroup
+startgroup
+set_property package_pin F18 [get_ports one]
+endgroup
+startgroup
+set_property package_pin F17 [get_ports zero]
+endgroup
+set_property pulltype PULLUP [get_ports [list clk_100Mhz]]
+set_property pulltype PULLUP [get_ports [list one]]
+set_property pulltype PULLUP [get_ports [list v]]
+set_property pulltype PULLUP [get_ports [list zero]]
+set_property pulltype PULLUP [get_ports [list reset]]
+save_constraints
+exit
+ERROR: [PlanAhead 12-106] *** Exception: ui.h.b: Found deleted key in HTclEventBroker. Verify if the classes listed here call cleanup()
+HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
+HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
+ (See C:/Users/AshfaqAhmad/Documents/DSD_lab_exam_2022/DSD_labexam\planAhead_pid9384.debug)
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Wed Jul 27 12:37:57 2022...
+INFO: [Common 17-83] Releasing license: PlanAhead

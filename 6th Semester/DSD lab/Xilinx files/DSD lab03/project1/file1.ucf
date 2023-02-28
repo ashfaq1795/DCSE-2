@@ -1,0 +1,30 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "in[7]" LOC = C17;
+NET "in[6]" LOC = C18;
+NET "in[5]" LOC = D17;
+NET "in[4]" LOC = D18;
+NET "in[3]" LOC = E18;
+NET "in[2]" LOC = E16;
+NET "in[1]" LOC = F18;
+NET "in[0]" LOC = F17;
+NET "out[7]" LOC = T18;
+NET "out[6]" LOC = T17;
+NET "out[5]" LOC = U18;
+NET "out[4]" LOC = U17;
+NET "out[3]" LOC = N16;
+NET "out[2]" LOC = N15;
+NET "out[1]" LOC = P16;
+NET "out[0]" LOC = P15;
+
+# PlanAhead Generated IO constraints 
+
+NET "in[7]" PULLUP;
+NET "in[6]" PULLUP;
+NET "in[5]" PULLUP;
+NET "in[4]" PULLUP;
+NET "in[3]" PULLUP;
+NET "in[2]" PULLUP;
+NET "in[1]" PULLUP;
+NET "in[0]" PULLUP;

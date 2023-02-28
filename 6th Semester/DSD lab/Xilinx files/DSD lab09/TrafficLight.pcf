@@ -1,0 +1,16 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Wed Jul 27 01:33:43 2022
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "v" LOCATE = SITE "F17" LEVEL 1;
+COMP "clk" LOCATE = SITE "V10" LEVEL 1;
+COMP "rst" LOCATE = SITE "C17" LEVEL 1;
+COMP "farm<0>" LOCATE = SITE "N15" LEVEL 1;
+COMP "farm<1>" LOCATE = SITE "P16" LEVEL 1;
+COMP "farm<2>" LOCATE = SITE "P15" LEVEL 1;
+COMP "highway<0>" LOCATE = SITE "T18" LEVEL 1;
+COMP "highway<1>" LOCATE = SITE "T17" LEVEL 1;
+COMP "highway<2>" LOCATE = SITE "U18" LEVEL 1;
+SCHEMATIC END;
+

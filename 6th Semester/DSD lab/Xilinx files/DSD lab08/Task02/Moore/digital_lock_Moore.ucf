@@ -1,0 +1,26 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "enable[0]" LOC = B2;
+NET "enable[1]" LOC = A2;
+NET "enable[2]" LOC = B3;
+NET "seg7[0]" LOC = A3;
+NET "seg7[1]" LOC = B4;
+NET "seg7[2]" LOC = A4;
+NET "seg7[3]" LOC = C4;
+NET "seg7[4]" LOC = C5;
+NET "seg7[5]" LOC = D6;
+NET "seg7[6]" LOC = C6;
+NET "seg7[7]" LOC = A5;
+NET "clk_100Mhz" LOC = V10;
+NET "reset" LOC = C17;
+NET "out" LOC = P15;
+NET "one" LOC = F18;
+NET "zero" LOC = F17;
+
+# PlanAhead Generated IO constraints 
+
+NET "clk_100Mhz" PULLUP;
+NET "one" PULLUP;
+NET "reset" PULLUP;
+NET "zero" PULLUP;

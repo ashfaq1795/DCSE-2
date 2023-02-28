@@ -1,0 +1,24 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Wed Jul 27 12:27:48 2022
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "enable<2>" LOCATE = SITE "B3" LEVEL 1;
+COMP "zero" LOCATE = SITE "F17" LEVEL 1;
+COMP "v" LOCATE = SITE "C18" LEVEL 1;
+COMP "seg7<0>" LOCATE = SITE "A3" LEVEL 1;
+COMP "seg7<1>" LOCATE = SITE "B4" LEVEL 1;
+COMP "gate" LOCATE = SITE "P16" LEVEL 1;
+COMP "seg7<2>" LOCATE = SITE "A4" LEVEL 1;
+COMP "seg7<3>" LOCATE = SITE "C4" LEVEL 1;
+COMP "seg7<4>" LOCATE = SITE "C5" LEVEL 1;
+COMP "one" LOCATE = SITE "F18" LEVEL 1;
+COMP "seg7<5>" LOCATE = SITE "D6" LEVEL 1;
+COMP "seg7<6>" LOCATE = SITE "C6" LEVEL 1;
+COMP "clk_100Mhz" LOCATE = SITE "V10" LEVEL 1;
+COMP "reset" LOCATE = SITE "C17" LEVEL 1;
+COMP "bulb" LOCATE = SITE "P15" LEVEL 1;
+COMP "enable<0>" LOCATE = SITE "B2" LEVEL 1;
+COMP "enable<1>" LOCATE = SITE "A2" LEVEL 1;
+SCHEMATIC END;
+

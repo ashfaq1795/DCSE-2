@@ -1,0 +1,10 @@
+# PROMGEN: Xilinx Prom Generator P.20131013
+# Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+SOFTWARE_VERSION P.20131013
+DATE            07/04/2022 - 13:48
+SOURCE          helloworld.bin
+DEVICE          512K
+DATA_WIDTH      1
+FILL_DATA       0xFF
+START_ADDRESS   0x00000000 END_ADDRESS 0x0005327B DIRECTION_UP   "helloworld.bit" 6slx9csg324

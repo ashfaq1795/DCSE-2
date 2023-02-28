@@ -1,0 +1,30 @@
+ 
+
+NET "out[6]" LOC = C6;
+NET "out[5]" LOC = D6;
+NET "out[4]" LOC = C5;
+NET "out[3]" LOC = C4;
+NET "out[2]" LOC = A4;
+NET "out[1]" LOC = B4;
+NET "out[0]" LOC = A3;
+
+
+NET "in[3]" PULLUP;
+NET "in[2]" PULLUP;
+NET "in[1]" PULLUP;
+NET "in[0]" PULLUP;
+
+
+NET "en" LOC = F17;
+NET "enable1" LOC = B2;
+NET "enable2" LOC = A2;
+NET "enable3" LOC = B3;
+
+
+NET "en" PULLUP;
+
+
+NET "in[0]" LOC = C17;
+NET "in[1]" LOC = C18;
+NET "in[2]" LOC = D17;
+NET "in[3]" LOC = D18;

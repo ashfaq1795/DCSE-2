@@ -1,0 +1,16 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "clk_100Mhz" LOC = V10;
+NET "led_even" LOC = P15;
+NET "led_odd" LOC = P16;
+NET "zero" LOC = F17;
+NET "one" LOC = F18;
+NET "reset" LOC = C17;
+
+# PlanAhead Generated IO constraints 
+
+NET "clk_100Mhz" PULLUP;
+NET "one" PULLUP;
+NET "reset" PULLUP;
+NET "zero" PULLUP;
