@@ -1,0 +1,7 @@
+>> POSO right shift as same as POSI left shift register. see left one.
+>> other types 
+++++PIPO left or right shift register 
+++++SISO left or right shift register
+++++SIPO left or right shift register.
+
+these are also very easy just see its truth table and circuit digram to understand their functionality then code it.

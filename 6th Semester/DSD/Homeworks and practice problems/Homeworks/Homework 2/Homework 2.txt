@@ -1,0 +1,5 @@
+|CSE308:DIgital system Design|Homework 2|
+
+******Reading*******
+
+Read Mano's DLD 3rd semester book chapter 5,6 and 7. Skim and pay greater attention to section 5-7,6-4,6-7,6-8,7-7 and 7-8.
