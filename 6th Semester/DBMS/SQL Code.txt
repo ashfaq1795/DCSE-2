@@ -1,0 +1,63 @@
+MariaDB [clinic_system]> show tables;
++-------------------------+
+| Tables_in_clinic_system |
++-------------------------+
+| doctor                  |
+| labortary               |
+| manager                 |
+| nurse                   |
+| patient                 |
++-------------------------+
+5 rows in set (0.047 sec)
+
+MariaDB [clinic_system]> select * from doctor;
++-----------+--------------+--------+---------------+-----------------+
+| Doctor_id | Doctor_name  | Gender | Doctor_salery | doctor_phone_No |
++-----------+--------------+--------+---------------+-----------------+
+|      1001 | Gohar Ali    | Male   |         50000 | 0303-5566708    |
+|      1011 | Noor Zahra   | Female |         65000 | 0346-7506008    |
+|      1013 | Ishaq Hashmi | Male   |         70000 | 0311-6586728    |
++-----------+--------------+--------+---------------+-----------------+
+3 rows in set (0.000 sec)
+
+MariaDB [clinic_system]> select * from nurse;
++----------+-----------+--------------+--------------+----------------+
+| nurse_id | Doctor_id | nurse_name   | nurse_salery | nurse_phone_No |
++----------+-----------+--------------+--------------+----------------+
+|      701 |      1001 | aslam syed   |        40000 | 0311-3421567   |
+|      713 |      1013 | faisal tahir |        40000 | 0331-3551717   |
+|      722 |      1013 | saima khan   |        30000 | 0344-6421563   |
++----------+-----------+--------------+--------------+----------------+
+3 rows in set (0.000 sec)
+
+MariaDB [clinic_system]> select * from manager;
++------------+-----------------+------------------+
+| manager_id | manager_name    | manager_phone_No |
++------------+-----------------+------------------+
+|        200 | Rehmat sab      | 0346-9578342     |
+|        201 | Tariq kamal sab | 0340-6578532     |
+|        202 | Nasir Ahmad     | 0343-2564211     |
++------------+-----------------+------------------+
+3 rows in set (0.001 sec)
+
+MariaDB [clinic_system]> select * from patient;
++------------+--------------+-------------+-----------------+------------------+
+| patient_id | patient_name | Patient_age | patient_address | patient_phone_No |
++------------+--------------+-------------+-----------------+------------------+
+|        301 | saleem akbar |          24 | charsadda       | 0313-5523431     |
+|        311 | basit ali    |          22 | Mansehra        | 0336-1524441     |
+|        315 | shadab khan  |          16 | battagram       | 0306-6677499     |
++------------+--------------+-------------+-----------------+------------------+
+3 rows in set (0.000 sec)
+
+MariaDB [clinic_system]> select * from labortary;
++--------------+----------------------+
+| labortary_id | labortary_name       |
++--------------+----------------------+
+|           53 | pak labortary        |
+|           57 | waseem labortary     |
+|           89 | Rehmat clinic labort |
++--------------+----------------------+
+3 rows in set (0.000 sec)
+
+MariaDB [clinic_system]>
