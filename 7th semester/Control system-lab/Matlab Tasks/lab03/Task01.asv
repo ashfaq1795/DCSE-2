@@ -1,0 +1,14 @@
+clc
+clear all
+close all
+num=30;
+denum=[1 5 10];
+r=roots(denum)
+sys=tf(num,denum);
+pzmap(sys);
+step_response=step(sys);
+plot(step_response);
+xlable('time');
+ylable('Amplitude');
+title('stable Function');
+

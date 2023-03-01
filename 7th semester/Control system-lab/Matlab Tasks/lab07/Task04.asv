@@ -1,0 +1,7 @@
+clc
+clear
+close all
+num=[1,2,12,7,6];
+denum=[1,9,13,8,0,0];
+tf(num,d
+[A,B,C,D]=tf2ss(num,denum)

@@ -1,0 +1,8 @@
+function dy=myfun(t,y)
+dy=zeros(5,1);
+dy(1)=y(2);
+dy(2)=y(3);
+dy(3)=y(4);
+dy(4)=y(5);
+dy(5)=-2*y(4)-24*y(3)-48*y(2)-24*y(1)-20*y(1)-10;
+end

@@ -1,0 +1,13 @@
+clc
+clear all
+close all
+num=100;
+denum=[1,4,20];
+sys=tf(num,denum);  %when impulse input passed from a system change in output is called impulse e
+im=impulse(sys);
+st=step(sys);
+plot(im);
+grid on
+figure 
+plot(st);
+grid on
