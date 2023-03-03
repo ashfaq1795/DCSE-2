@@ -1,0 +1,15 @@
+C:/Users/AshfaqAhmad/Documents/task1.v {1 {vlog -work work C:/Users/AshfaqAhmad/Documents/task1.v
+Model Technology ModelSim SE vlog 5.7f Compiler 2003.09 Sep 15 2003
+-- Compiling module decoder2x4
+
+Top level modules:
+	decoder2x4
+
+} {} {}} C:/Users/AshfaqAhmad/Documents/task2.v {1 {vlog -work work C:/Users/AshfaqAhmad/Documents/task2.v
+Model Technology ModelSim SE vlog 5.7f Compiler 2003.09 Sep 15 2003
+-- Compiling module stim_d
+
+Top level modules:
+	stim_d
+
+} {} {}}

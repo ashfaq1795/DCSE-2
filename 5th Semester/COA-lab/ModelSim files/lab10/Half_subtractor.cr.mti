@@ -1,0 +1,15 @@
+C:/Users/AshfaqAhmad/Documents/lab10/taskHS1.v {1 {vlog -work work C:/Users/AshfaqAhmad/Documents/lab10/taskHS1.v
+Model Technology ModelSim SE vlog 5.7f Compiler 2003.09 Sep 15 2003
+-- Compiling module half_subtractor
+
+Top level modules:
+	half_subtractor
+
+} {} {}} C:/Users/AshfaqAhmad/Documents/lab10/taskHS2.v {1 {vlog -work work C:/Users/AshfaqAhmad/Documents/lab10/taskHS2.v
+Model Technology ModelSim SE vlog 5.7f Compiler 2003.09 Sep 15 2003
+-- Compiling module stim_half_sub
+
+Top level modules:
+	stim_half_sub
+
+} {} {}}

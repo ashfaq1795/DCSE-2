@@ -1,0 +1,15 @@
+C:/Users/AshfaqAhmad/Documents/lab11/taska1.v {1 {vlog -work work C:/Users/AshfaqAhmad/Documents/lab11/taska1.v
+Model Technology ModelSim SE vlog 5.7f Compiler 2003.09 Sep 15 2003
+-- Compiling module general1
+
+Top level modules:
+	general1
+
+} {} {}} C:/Users/AshfaqAhmad/Documents/lab11/taska2.v {1 {vlog -work work C:/Users/AshfaqAhmad/Documents/lab11/taska2.v
+Model Technology ModelSim SE vlog 5.7f Compiler 2003.09 Sep 15 2003
+-- Compiling module stimg1
+
+Top level modules:
+	stimg1
+
+} {} {}}

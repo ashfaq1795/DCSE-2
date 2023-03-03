@@ -1,0 +1,48 @@
+# Current time Mon Feb 21 12:07:04 2022
+# ModelSim Stack Trace
+# Program = vish
+# Id = "5.7f"
+# Version = "2003.09"
+# Date = "Sep 15 2003"
+# Platform = win32
+
+Exception c0000005 has occurred at address 00469dc6. Traceback:
+# 0    0x00469dc6: '<unknown (@0x469dc6)>'
+# 1    0x00468b59: '<unknown (@0x468b59)>'
+# 2    0x0046b15d: '<unknown (@0x46b15d)>'
+# 3    0x0046b0cc: '<unknown (@0x46b0cc)>'
+# 4    0x0046b502: '<unknown (@0x46b502)>'
+# 5    0x0040a9ff: '<unknown (@0x40a9ff)>'
+# 6    0x1000c2bb: 'TclInvokeStringCommand + 0x6b'
+# 7    0x1003ccd6: 'Tcl_EvalObjv + 0x3d6'
+# 8    0x1003d18a: 'Tcl_EvalEx + 0x11a'
+# 9    0x1000cc62: 'Tcl_EvalObjEx + 0x342'
+# 10   0x1001059c: 'Tcl_EvalObjCmd + 0x6c'
+# 11   0x100238e4: 'TclExecuteByteCode + 0x5b4'
+# 12   0x1000cb12: 'Tcl_EvalObjEx + 0x1f2'
+# 13   0x100427ef: 'TclObjInterpProc + 0x26f'
+# 14   0x100238e4: 'TclExecuteByteCode + 0x5b4'
+# 15   0x1000cb12: 'Tcl_EvalObjEx + 0x1f2'
+# 16   0x10023a73: 'TclExecuteByteCode + 0x743'
+# 17   0x1000cb12: 'Tcl_EvalObjEx + 0x1f2'
+# 18   0x100427ef: 'TclObjInterpProc + 0x26f'
+# 19   0x100238e4: 'TclExecuteByteCode + 0x5b4'
+# 20   0x1000cb12: 'Tcl_EvalObjEx + 0x1f2'
+# 21   0x100427ef: 'TclObjInterpProc + 0x26f'
+# 22   0x1003ccd6: 'Tcl_EvalObjv + 0x3d6'
+# 23   0x1003d18a: 'Tcl_EvalEx + 0x11a'
+# 24   0x10047054: 'Tcl_AfterObjCmd + 0x594'
+# 25   0x10046934: 'Tcl_DeleteTimerHandler + 0x1d4'
+# 26   0x1003af20: 'Tcl_ServiceEvent + 0x60'
+# 27   0x1003b191: 'Tcl_DoOneEvent + 0x111'
+# 28   0x008ed73c: 'Tk_MainLoop + 0x14'
+# 29   0x0090ce48: 'Tk_MainEx + 0x438'
+# 30   0x0042ec44: '<unknown (@0x42ec44)>'
+# 31   0x0042f159: '<unknown (@0x42f159)>'
+# 32   0x004ccb55: '<unknown (@0x4ccb55)>'
+# 33   0x768cfa29: '<unknown (@0x768cfa29)>'
+# 34   0x77bb7a9e: '<unknown (@0x77bb7a9e)>'
+# 35   0x77bb7a6e: '<unknown (@0x77bb7a6e)>'
+StackWalk failed 487
+# End of Stack Trace
+

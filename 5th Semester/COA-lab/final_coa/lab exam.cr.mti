@@ -1,0 +1,7 @@
+C:/Users/AshfaqAhmad/Documents/gate.v {0 {vlog -work work C:/Users/AshfaqAhmad/Documents/gate.v
+Model Technology ModelSim SE vlog 5.7f Compiler 2003.09 Sep 15 2003
+-- Compiling module mux2x1
+** Error: C:/Users/AshfaqAhmad/Documents/gate.v(2): near "input":  expecting: ';'
+** Error: C:/Users/AshfaqAhmad/Documents/gate.v(3): near "(":  expecting: IDENT
+
+} {4.0 6.0} {}}

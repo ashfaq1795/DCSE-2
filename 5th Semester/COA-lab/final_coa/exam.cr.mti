@@ -1,0 +1,15 @@
+C:/Users/AshfaqAhmad/Documents/taska.v {1 {vlog -work work C:/Users/AshfaqAhmad/Documents/taska.v
+Model Technology ModelSim SE vlog 5.7f Compiler 2003.09 Sep 15 2003
+-- Compiling module circuit
+
+Top level modules:
+	circuit
+
+} {} {}} C:/Users/AshfaqAhmad/Documents/taskb.v {1 {vlog -work work C:/Users/AshfaqAhmad/Documents/taskb.v
+Model Technology ModelSim SE vlog 5.7f Compiler 2003.09 Sep 15 2003
+-- Compiling module stimdecode
+
+Top level modules:
+	stimdecode
+
+} {} {}}

@@ -1,0 +1,15 @@
+C:/Users/AshfaqAhmad/Documents/lab11/taskc2.v {1 {vlog -work work C:/Users/AshfaqAhmad/Documents/lab11/taskc2.v
+Model Technology ModelSim SE vlog 5.7f Compiler 2003.09 Sep 15 2003
+-- Compiling module stimmux4x1
+
+Top level modules:
+	stimmux4x1
+
+} {} {}} C:/Users/AshfaqAhmad/Documents/lab11/taskc1.v {1 {vlog -work work C:/Users/AshfaqAhmad/Documents/lab11/taskc1.v
+Model Technology ModelSim SE vlog 5.7f Compiler 2003.09 Sep 15 2003
+-- Compiling module mux4x1
+
+Top level modules:
+	mux4x1
+
+} {} {}}

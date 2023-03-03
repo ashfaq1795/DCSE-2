@@ -1,0 +1,110 @@
+m255
+cModel Technology
+dC:\Modeltech_5.7f\examples
+vdecoder2x4
+IGi>9bho?bPa=[i1@H>NKS0
+VR2ml712VNNP1:c2GHD>a[1
+w1644219745
+FC:/Users/AshfaqAhmad/Documents/task1.v
+L0 1
+OE;L;5.7f;17
+r1
+31
+o-work work
+vh_adder
+IMHU][ZJ7lFg8=bEoJgiTG0
+VVh1a;OP1bB89jnazIW1F71
+dC:\Users\AshfaqAhmad\Documents\lab10
+w1644868975
+FC:/Users/AshfaqAhmad/Documents/lab10/taskHD1.v
+L0 1
+OE;L;5.7f;17
+r1
+31
+o-work work
+vhalf_subtractor
+IIk8SS`jJ4c7U@OAPc]h5U2
+VG?;[e47:OJWm9_PU@>ER32
+dC:\Users\AshfaqAhmad\Documents\lab10
+w1644908837
+FC:/Users/AshfaqAhmad/Documents/lab10/taskHS1.v
+L0 1
+OE;L;5.7f;17
+r1
+31
+o-work work
+vhalfadder
+o-work work
+vmux2x1
+o-work work
+vmux4x1
+o-work work
+vmux8x1
+o-work work
+vstim
+o-work work
+vstim4x1
+IA1zeRV>7WE3dkgPjPe]km3
+Vke[[Ff3UG=6To6b:oHG?51
+w1644861215
+FC:/Modeltech_5.7f/examples/taskB2.v
+L0 1
+OE;L;5.7f;17
+r1
+31
+o-work work
+vstim_adder
+IE<4HEbClkcZYBN^Io?_g?3
+VY`oLJFldGVQb@;3BGU?^z1
+dC:\Users\AshfaqAhmad\Documents\lab10
+w1644941160
+FC:/Users/AshfaqAhmad/Documents/lab10/taskHD2.v
+L0 1
+OE;L;5.7f;17
+r1
+31
+o-work work
+vstim_half_sub
+IhVGPCW8kSZ_Q1B]ELW`c>0
+V<LmH3I_F]ZN25oKP83L3?0
+dC:\Users\AshfaqAhmad\Documents\lab10
+w1644908833
+FC:/Users/AshfaqAhmad/Documents/lab10/taskHS2.v
+L0 1
+OE;L;5.7f;17
+r1
+31
+o-work work
+vstim_mux2x1
+I>W5Q3RGczVBGfZ>f5mHk81
+VNA]^c`Ce_<N_K9@[1iWf]1
+dC:\Users\AshfaqAhmad\Documents\lab10
+w1644864625
+FC:/Users/AshfaqAhmad/Documents/lab10/taskA2.v
+L0 1
+OE;L;5.7f;17
+r1
+31
+o-work work
+vstim_mux4x1
+I^fg@Y[4[U;19MM64UDUDP3
+VJYYD]0RURzVDMchd@i]m72
+dC:\Users\AshfaqAhmad\Documents\lab10
+w1644861312
+FC:/Users/AshfaqAhmad/Documents/lab10/taskB2.v
+L0 1
+OE;L;5.7f;17
+r1
+31
+o-work work
+vstim_mux8x1
+IeZ<kkBfZjn4O]9LI_h@2G0
+VYa42L[6VB;Y94WF?K<gTP2
+dC:\Users\AshfaqAhmad\Documents\lab10
+w1644867137
+FC:/Users/AshfaqAhmad/Documents/lab10/taskC2.v
+L0 1
+OE;L;5.7f;17
+r1
+31
+o-work work
