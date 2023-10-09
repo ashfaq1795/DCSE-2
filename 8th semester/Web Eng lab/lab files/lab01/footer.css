@@ -1,0 +1,22 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+/* outer container setting */
+ .container{   
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    background-color: gray;
+    position: absolute;
+    bottom: 0;
+}
+/* inner containers settings. combine method */
+.container1,.container2,.container3{   
+    padding: 20px 90px 50px 90px;
+    width: 140px;
+    list-style: none;
+}
+
+

@@ -1,0 +1,32 @@
+.cont{
+    padding: 5px 20px;
+}
+.Header{
+    background-color: rgb(50, 10, 169);
+    height: 80px;
+}
+.sidebar{
+    background-color: blueviolet;
+    height: 450px;
+}
+.main{
+    background-color: rgb(74, 74, 156);
+    height: 330px;
+}
+.item1{
+    background-color: aquamarine;
+    height: 120px;
+}
+.item2{
+    background-color: rgb(41, 108, 85);
+}
+.footer{
+    background-color: rgb(50, 10, 169) ;
+    height: 110px;
+}
+.Header,.footer,.main,.item1,.item2,.sidebar{
+    border: 5px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

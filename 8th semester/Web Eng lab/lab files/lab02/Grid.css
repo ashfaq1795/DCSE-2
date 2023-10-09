@@ -1,0 +1,55 @@
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .container{
+    display: grid;
+    gap: 8px; 
+    grid-template-areas: 'header header header header header header'
+    'sidebar sidebar main main main main'
+    'sidebar sidebar item1 item1 item2 item2'
+    'footer footer footer footer footer footer';
+    padding: 10px; /* this padding is container only.*/
+    background-color: black ;
+}
+.container >div{   
+    /* make each div inside container class as grid and apply grid properties to bring each grid elements to the center. in this case each grid has single element as "simple text" */
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+.item0{
+    background-color: rgb(73, 9, 126);
+    grid-area: header;
+    height: 80px;
+}
+.item1{
+    background-color: rgb(132, 20, 238);
+    height: 400px;
+    width: 300px;
+    grid-area: sidebar;
+}
+.item2{
+    background-color:rgb(10, 127, 243);
+    height: 270px;
+    width:1035px;
+    grid-area: main;
+}
+.item3{
+    background-color: rgb(163, 107, 216);
+    height: 117px;
+    grid-area: item1;
+}
+.item4{
+    background-color: rgb(127, 111, 141);
+    height: 117px;
+    grid-area: item2;
+}
+.item5{
+    background-color: rgb(44, 1, 85);
+    height: 140px;
+    grid-area: footer;
+}
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <link rel="stylesheet" href="Task03.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <h1>Ashfaq Ahmad</h1>
+    <form>
+        <h1>Student Form</h1>
+        <div class="form-row">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+        </div>
+        <div class="form-row">
+            <label for="pswd">Password:</label>
+            <input type="password" id="pswd" placeholder="Password">
+        </div>
+        <div class="form-row">
+            <label for="selection">Country:</label>
+            <select id="selection">
+                <option value="Select">Select</option>
+                <option value="Afghanistan">Afghanistan</option>
+                <option value="Bangladash">Bangladash</option>
+                <option value="Pakistan">Pakistan</option>
+            </select>
+        </div>
+        <div id="city-select" class="form-row">
+            <label for="city">Cities:</label>
+            <select id="city" name="city">
+                <option value="Select a city">Select a city</option>
+                <option value="karachi">Karachi</option>
+                <option value="lahore">Lahore</option>
+                <option value="islamabad">Islamabad</option>
+            </select>
+        </div>
+        <div id="city-input" class="form-row">
+            <label for="city-manual">City:</label>
+            <input type="text" id="city-manual" placeholder="Enter your city name">
+        </div>
+        <div class="form-row">
+            <label class="Message" for="txt">Message:</label>
+            <textarea id="txt" cols="30" rows="10"></textarea>
+        </div>
+        <div class="form-row">
+            <label for="upload">Upload Pic:</label>
+            <input type="file" id="upload">
+        </div>
+        <button id="btn">Sign Up</button>
+    </form>
+
+
+    <script src="Task03.js"></script>
+</body>
+
+</html>

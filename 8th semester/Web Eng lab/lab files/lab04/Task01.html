@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Bill</title>
+    <link rel="stylesheet" href="Task01.css">
+</head>
+
+<body>
+    <h1>Ashfaq Ahmad</h1>
+    <div class="bill">
+        <table>
+            <caption>Medical Billing System</caption>
+            <tr>
+                <th>S.No.</th>
+                <th>Item</th>
+                <th>Unit Cost (Rs.)</th>
+                <th>Quantity</th>
+                <th>Cost (Rs.)</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Erithromycin 100mg</td>
+                <td id="item1">58</td>
+                <td><input type="text" id="q1" value=""></td>
+                <td><input type="text" id="c1" value="0">
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Femramycin 500mg</td>
+                <td id="item2">46</td>
+                <td><input type="text" id="q2" value=""></td>
+                <td><input type="text" id="c2" value="0"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Oxiymclin 2mg</td>
+                <td id="item3">1090</td>
+                <td><input type="text" id="q3" value=""></td>
+                <td><input type="text" id="c3" value="0"></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: end; font-weight: bold;">Total</td>
+                <td><input type="text" id="tt" value=""></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: end; font-weight: bold;">GST at 15%</td>
+                <td><input type="text" id="percent" value=""></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: end; font-weight: bold;">Grand Total Rs.</td>
+                <td><input type="text" id="gtt" value=""></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: end;"><button>Update Grand Total</button></td>
+                
+            </tr>
+        </table>
+    </div>
+
+
+    <script src="Task01.js"> </script>
+</body>
+
+</html>

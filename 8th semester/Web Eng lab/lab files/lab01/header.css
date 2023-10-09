@@ -1,0 +1,20 @@
+*{
+    margin: 0px;
+    padding:0px;
+}
+.container{
+    display: flex;
+    background-color: rgb(195, 188, 188);
+    height: 80px;
+}
+li{
+    padding: 28px 15px;
+    /* this padding is inside container class */
+    list-style: none;
+}
+.dot{
+    background-color: green;
+    padding: 18px 25px;  
+    /* this padding is inside the dot class  */
+    border-radius: 100%;   
+}

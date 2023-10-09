@@ -1,0 +1,13 @@
+$(document).ready(function(){
+    $('#city-select').hide();
+    $('#city-input').hide();
+    $('#selection').change(function(){
+        if($(this).val()==='Pakistan'){
+            $('#city-select').show();
+            $('#city-input').hide();
+        }else{
+            $('#city-select').hide();
+            $('#city-input').show();
+        }
+    })
+})

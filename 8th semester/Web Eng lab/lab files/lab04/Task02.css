@@ -1,0 +1,12 @@
+.container{
+    background-color: rgb(247, 244, 244);
+    width: 50%;
+}
+input,button{
+    padding: 8px 0px;
+    margin: 0px 3px;
+}
+button{
+    background-color: rgb(217, 213, 213);
+    border-color: rgb(217, 213, 213);
+}

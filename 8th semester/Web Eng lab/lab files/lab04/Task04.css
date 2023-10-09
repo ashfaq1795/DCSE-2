@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+}
+.box1,.box2,.box3{
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+}
+/* class for jquery toggling */
+.toggle{    
+    background-color: green;
+}
+/* class for jquery toggling */
+.border{
+    border-radius: 30px;
+}
+/* class for jquery toggling */
+.addbox{
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+}

@@ -1,0 +1,54 @@
+/* in case of grid-tamplete-area property justify-content property don't work */
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+ul{
+    height: 80px;
+    background-color:rgb(38, 36, 33);  
+    display: grid;
+    grid-template-columns:13fr 1fr 0.5fr;
+    align-items: center; 
+    list-style: none;
+    padding: 0px 30px;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+h1{
+    padding: 20px;
+}
+.container{
+    display: grid;
+    grid-template-columns:1fr 2fr 1fr 2fr 1fr 2fr;
+    row-gap: 10px;
+    padding: 0px 12px;
+}
+h3{
+    color:rgb(39, 132, 239);
+}
+.item1{
+    height: 300px;  /* height must be same of all grids in each row*/
+    width: 170px;
+    background-color: rgba(26, 24, 24, 0.735);
+}
+.item2{
+    background-color:rgb(204, 202, 202);
+    font-size: 17px;
+    height: 300px;
+    width: 245px;
+    padding: 0px 10px;
+}
+.footer{
+    height: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.3fr;
+    align-items: center;  /*veritcally alignment */
+    background-color: rgb(246, 241, 241);
+    padding: 0px 30px;
+}
+u{
+    color: blue;
+}

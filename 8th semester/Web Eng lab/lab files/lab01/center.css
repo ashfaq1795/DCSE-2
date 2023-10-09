@@ -1,0 +1,34 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+/* by default each container size is equal the size of contents inside that container. we can play with its size by using dsiplay: flex; property and height, width properties of container.  */
+.container{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center; 
+    /* align-items and align-content works same but align-content don't work without flex-wrap property. */
+    /* if flex-direction is vertical then justify-conetent work along y-axis and align-items and align-content works along x-axis. */
+}
+   .item{
+    height: 200px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    color: darkgray;
+}  
+
+button{
+    padding: 8px 15px;
+    border-radius: 5px;
+    border-color: dodgerblue;
+    background-color: dodgerblue;
+    color: white;
+}
+p{
+    font-size: 50px;
+}

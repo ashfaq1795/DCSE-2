@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <title>Hello, world!</title>
+
+    <style>
+        .layout {
+            margin: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout border-bottom border-top p-4">
+        <button type="button" class="btn btn-danger" data-container="body" data-toggle="popover" data-placement="top"
+            data-content="Top popover">
+            Popover on Top
+        </button>
+        <button type="button" class="btn btn-primary" data-container="body" data-toggle="popover" data-placement="right"
+            data-content="left popover">
+            Popover on left
+        </button>
+        <button type="button" class="btn btn-warning" data-container="body" data-toggle="popover"
+            data-placement="bottom" data-content="Lorem ipsum dolor sit, amet consectetur adipisicing elit.">
+            Popover on bottom
+        </button>
+        <button type="button" class="btn btn-success" data-container="body" data-toggle="popover" data-placement="right"
+            data-content="right popover">
+            Popover on right
+        </button>
+    </div>
+    <div class="layout">
+        <button id="btn1" type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"
+            data-placement="bottom" data-content="Bottom popover">
+            Show popover
+        </button>
+        <button id="btn2" type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"
+            data-placement="bottom" data-content="Bottom popover">
+            Hide popover
+        </button>
+        <button id="btn3" type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"
+            data-placement="bottom" data-content="Bottom popover">
+            Toggle popover
+        </button>
+    </div>
+
+
+
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+            $('#btn1').popover('show');
+            $('#btn2').popover('hide');
+            $('#btn3').popover('toggle');
+        })
+    </script>
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
