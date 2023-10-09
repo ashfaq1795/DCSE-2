@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+
+<body>
+    <form action="form.php"></form>
+    <label for="selection">I understand that this form has no liability:
+        <input type="checkbox" name="selection" id="ashfaq">
+    </label>
+    <input type="button" value="Go to Download" style="background-color:orange; color:black;">
+    </form>
+
+
+    <script>
+        const checkbox = document.getElementById("ashfaq");
+        const button = document.querySelector('input[type="button"]');
+    
+        button.addEventListener("click", function() {
+            if (checkbox.checked) {
+                window.open('https//www.google.com');
+                // add code to redirect to download page here
+            } else {
+                alert("You didn't tick the chickbox!");
+            }
+        });
+    </script>
+    
+</body>
+
+</html>

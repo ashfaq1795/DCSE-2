@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #big-square {
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+            position: relative;
+        }
+
+        #small-square1,
+        #small-square2 {
+            width: 50px;
+            height: 50px;
+            background-color: #f00;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #small-square2 {
+            background-color: #00f;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="big-square">
+        <div id="small-square1"></div>
+        <div id="small-square2"></div>
+    </div>
+
+    <script>
+        const smallSquare1 = document.getElementById('small-square1');
+        const smallSquare2 = document.getElementById('small-square2');
+
+        smallSquare1.addEventListener('click', moveSquare);
+        smallSquare2.addEventListener('click', moveSquare);
+
+        function moveSquare(event) {
+            const square = event.target;
+            console.log(square);
+            const bigSquare = document.getElementById('big-square');
+
+            // generate random position inside big square
+            const x = Math.floor(Math.random() * (bigSquare.clientWidth - square.clientWidth));
+            const y = Math.floor(Math.random() * (bigSquare.clientHeight - square.clientHeight));
+
+            // move square to new position
+            square.style.transform = `translate(${x}px, ${y}px)`;
+        }
+
+    </script>
+</body>
+
+</html>
